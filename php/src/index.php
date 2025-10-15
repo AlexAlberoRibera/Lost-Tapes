@@ -17,7 +17,10 @@
     <li><a href="#nosotros">Foros</a></li>
     <li><a href="#contacto">Vender</a></li>
     <li><a href="#nosotros">Sobre Nosotros</a></li>
-    <img src="../public/facebook.png" alt="Enlace a facebook" width="25" height="25" />
+     <form class="buscador" action="/buscar" method="GET">
+        <input type="text" name="q" placeholder="Buscar...">
+        <button type="submit">Buscar</button>
+    <img src="../public/facebook.png" alt="Enlace a facebook" width="50" height="50" />
   </ul>
 </nav>
     </div>
