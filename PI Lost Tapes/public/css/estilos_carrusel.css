@@ -1,0 +1,38 @@
+.hero{ text-align:center; margin:2.5rem 0 1rem }
+
+.carousel{
+  position:relative;
+  overflow:hidden;
+  max-width:1000px;
+  height:420px;
+  margin:0 auto;
+}
+
+.carousel-track{display:flex;gap:1rem;transition:transform 0.45s ease;align-items:center;padding:0 12px}
+
+.carousel-item{flex:0 0 auto;width:66%;opacity:0.55;transform:scale(0.9);transition:transform 0.45s, opacity 0.45s;display:flex;align-items:center;justify-content:center;border-radius:12px;overflow:hidden}
+.carousel-item img{width:100%;height:100%;object-fit:cover;display:block}
+
+.carousel-item.active{opacity:1;transform:scale(1);z-index:2}
+
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.carousel-btn.prev{left:12px}
+.carousel-btn.next{right:12px}
+
+.carousel-indicators{text-align:center;margin-top:12px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#bbb;margin:0 6px;cursor:pointer;vertical-align:middle}
+.dot.active{background:#222}
+
+/* Responsive tweaks */
+@media (max-width:900px){
+  .carousel{height:360px}
+  .carousel-item{width:72%}
+}
+@media (max-width:600px){
+  .carousel{height:300px}
+  .carousel-item{width:86%}
+  .carousel-btn{width:38px;height:38px}
+}
+
+/* small helper for other sections */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
