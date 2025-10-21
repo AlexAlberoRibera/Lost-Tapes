@@ -1,4 +1,7 @@
-.hero{ text-align:center; margin:2.5rem 0 1rem }
+.hero {
+  text-align: center;
+  margin-bottom: 4rem; /* más espacio debajo del carrusel */
+}
 
 .carousel{
   position:relative;
