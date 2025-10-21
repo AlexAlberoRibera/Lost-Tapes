@@ -69,7 +69,7 @@ h1 {
   font-size: 16px;
   outline: none;
   width: 160px;
-  transition: width 0.3s ease, background 0.3s;
+  transition: width 0.3s ease, background 0.3s; /*Al empezar a buscar el tamaño del buscador aumentara un poco*/
 }
 
 .search-bar input:focus {
@@ -90,5 +90,55 @@ h1 {
 
 .search-bar button:hover {
   background: rgba(255, 255, 255, 0.25);
+}
+
+.peliculas-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.peliculas-section h5 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.peliculas {
+    display: flex;           /* Para alinear horizontalmente */
+    justify-content: space-between; /* Espacio entre cada tarjeta */
+    gap: 20px;               /* Separación uniforme */
+}
+
+.pelicula {
+    background-color: #d9f8ff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 30%;              /* Cada tarjeta ocupa aproximadamente 1/3 del contenedor */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pelicula img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.pelicula:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.pelicula h4{
+  font-size: 20px;
+}
+
+.pelicula p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    text-align: left;
 }
 

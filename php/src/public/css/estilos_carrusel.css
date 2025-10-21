@@ -8,15 +8,40 @@
   overflow:hidden;
   max-width:1000px;
   height:420px;
-  margin:0 auto;
+  margin:0 auto
 }
 
-.carousel-track{display:flex;gap:1rem;transition:transform 0.45s ease;align-items:center;padding:0 12px}
+.carousel-track{
+  display:flex;
+  gap:1rem;
+  transition:transform 0.45s ease;
+  align-items:center;
+  padding:0 12px;
+}
 
-.carousel-item{flex:0 0 auto;width:66%;opacity:0.55;transform:scale(0.9);transition:transform 0.45s, opacity 0.45s;display:flex;align-items:center;justify-content:center;border-radius:12px;overflow:hidden}
-.carousel-item img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-item{flex:0 0 
+  auto;
+  width:85%;
+  opacity:0.55;
+  transform:scale(0.9);
+  transition:transform 0.45s, 
+  opacity 0.45s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  overflow:hidden
+}
+.carousel-item img{width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block
+}
 
-.carousel-item.active{opacity:1;transform:scale(1);z-index:2}
+.carousel-item.active{opacity:1;
+  transform:scale(1);
+  z-index:2
+}
 
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
 .carousel-btn.prev{left:12px}
