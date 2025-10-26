@@ -1,94 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PI Lost Tapes</title>
-        <link rel="stylesheet" href="./public/css/estilo.css" />
-        <link rel="stylesheet" href="./public/css/estilos_carrusel.css" />
-        <link rel="stylesheet" href="./public/css/estilos_peliculas.css">
-    </head>
-    <body>
-        <header>
-            <img src="img/Logo Tapes.png" alt="Logo Tapes" />
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Sell</a></li>
-                </ul>
-            </nav>
-        </header>
 
-        <main>
-            <section class="hero">
-    <h2 class="section-title">Best Memphis Lost Mixtapes</h2>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PI Lost Tapes</title>
+  <link rel="stylesheet" href="./public/css/estilo.css" />
+  <link rel="stylesheet" href="./public/css/estilos_carrusel.css" />
+  <link rel="stylesheet" href="./public/css/estilos_peliculas.css">
+</head>
 
-    <div class="carrusel">
-      <!-- Botón previo -->
-      <button class="carrusel-btn prev" aria-label="Anterior">&#10094;</button>
+<body>
+  <header>
+    <img src="./public/img/Logo Tapes.png" alt="Logo Tapes" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Sell</a></li>
+      </ul>
+    </nav>
+    <form class="search-bar" action="#" method="get">
+      <input type="text" name="q" placeholder="Buscar..." />
+      <button type="submit">Buscar</button>
+    </form>
+  </header>
 
-      <div class="carrusel-track">
-        <article class="carrusel-item">
-          <img src="./public/img/Trap_Story.png" alt="Portada mixtape 1">
-        </article>
-        <article class="carrusel-item active">
-          <img src="./public/img/Woppenheimer.png" alt="Portada mixtape 2">
-        </article>
-        <article class="carrusel-item">
-          <img src="./public/img/Looney_Tunes.png" alt="Portada mixtape 3">
-        </article>
+  <main>
+    <section class="hero">
+      <h2 class="section-title">Best Memphis Lost Mixtapes</h2>
 
+      <div class="carrusel">
+        <!-- Botón previo -->
+        <button class="carrusel-btn prev" aria-label="Anterior">&#10094;</button>
+
+        <div class="carrusel-track">
+          <article class="carrusel-item">
+            <img src="./public/img/Trap_Story.png" alt="Portada mixtape 1">
+          </article>
+          <article class="carrusel-item active">
+            <img src="./public/img/Woppenheimer.png" alt="Portada mixtape 2">
+          </article>
+          <article class="carrusel-item">
+            <img src="./public/img/Looney_Tunes.png" alt="Portada mixtape 3">
+          </article>
+
+        </div>
+
+        <!-- Botón siguiente -->
+        <button class="carrusel-btn next" aria-label="Siguiente">&#10095;</button>
       </div>
 
-      <!-- Botón siguiente -->
-      <button class="carrusel-btn next" aria-label="Siguiente">&#10095;</button>
-    </div>
+      <!-- Indicadores (puntos de navegación) -->
+      <div class="carrusel-indicators">
+        <span class="dot"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+  </main>
+  <script src="./js/carousel.js"></script>
 
-    <!-- Indicadores (puntos de navegación) -->
-    <div class="carrusel-indicators">
-      <span class="dot"></span>
-      <span class="dot active"></span>
-      <span class="dot"></span>
-    </div>
-  </section>
-        </main>
-    <script src="./js/carousel.js"></script>
-        
   <h2 class="titulo">New Cult Movies</h2>
 
-    <div class="peliculas">
-      <div class="portada">
-        <div class="img-wrap">
-          <img src="./public/img/harakiri.png" alt="Portada Peliculas 1">
-        </div>
-        <div class="meta">
-          <span class="title">Movie 1</span>
-          <span class="duracion">1:42</span>
-        </div>
+  <div class="peliculas">
+    <div class="portada">
+      <div class="img-wrap">
+        <img src="./public/img/harakiri.png" alt="Portada Peliculas 1">
       </div>
-
-      <div class="portada">
-        <div class="img-wrap">
-          <img src="./public/img/kigbutter.png" alt="Portada Peliculas 2">
-        </div>
-        <div class="meta">
-          <span class="title">Movie 2</span>
-          <span class="duracion">0:58</span>
-        </div>
+      <div class="meta">
+        <span class="title">Movie 1</span>
+        <span class="duracion">1:42</span>
       </div>
-
-      <div class="portada">
-        <div class="img-wrap">
-          <img src="./public/img/ladron.png" alt="Portada Peliculas 3">
-        </div>
-        <div class="meta">
-          <span class="title">Movie 3</span>
-          <span class="duracion">2:05</span>
-        </div>
-      </div>
-
     </div>
-    </body>
+
+    <div class="portada">
+      <div class="img-wrap">
+        <img src="./public/img/kigbutter.png" alt="Portada Peliculas 2">
+      </div>
+      <div class="meta">
+        <span class="title">Movie 2</span>
+        <span class="duracion">0:58</span>
+      </div>
+    </div>
+
+    <div class="portada">
+      <div class="img-wrap">
+        <img src="./public/img/ladron.png" alt="Portada Peliculas 3">
+      </div>
+      <div class="meta">
+        <span class="title">Movie 3</span>
+        <span class="duracion">2:05</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+
 </html>

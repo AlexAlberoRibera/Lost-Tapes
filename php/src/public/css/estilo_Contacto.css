@@ -1,0 +1,131 @@
+.contacto {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contacto h1 {
+  text-align: center;
+  color: #333;
+}
+
+.contacto p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-contacto label {
+  font-weight: bold;
+  color: #444;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-contacto button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-contacto button:hover {
+  background-color: #555;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial, Helvetica, sans-serif;color:#fff}
+
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:rgba(0,0,0,0.75);
+  display:flex;align-items:center;gap:20px;padding:12px 18px;z-index:100;
+}
+main {
+  padding-top: 60px; /* altura del header + pequeño margen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000000;
+}
+
+
+header img{height:70px;width:100px;display:block}
+
+nav{flex:1}
+
+nav ul{
+    font-size: 20px;
+    list-style:none;
+    margin:0;padding:0;
+    display:flex;justify-content:center;
+    gap:18px
+}
+
+nav li{margin:0}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:6px 10px;border-radius:6px;
+    display:inline-block
+}
+main {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-bar input {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  width: 160px;
+  transition: width 0.3s ease, background 0.3s; /*Al empezar a buscar el tamaño del buscador aumentara un poco*/
+}
+
+.search-bar input:focus {
+  width: 220px;
+  background: #222;
+  color: #fff;
+}
+
+.search-bar button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 6px 10px;
+  transition: background 0.3s;
+}
+
+.search-bar button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
