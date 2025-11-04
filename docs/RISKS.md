@@ -1,0 +1,12 @@
+
+Risc | Probabilitat | Impacte | Mesura preventiva | Responsable | Seguiment
+--- | --- | --- | --- | --- | ---
+Pérdua de dades d'usuaris o productes | Mitjana | Alta | Fer còpies de seguretat regulars, validar totes les dades al frontend i al backend, utilitzar bases de dades amb integritat i transaccions. | Equip backend | Revisió setmanal de còpies i comprovació del funcionament de la base de dades.
+Falles de seguretat o atacs externs | Mitjana | Alta | Validar i netejar totes les entrades d'usuari, utilitzar HTTPS, emmagatzemar contrasenyes de manera segura, actualitzar dependències i monitoritzar intents d'accés sospitosos. | Equip backend i frontend | Monitorització contínua i revisió de logs cada setmana.
+Errors en la comunicació amb el servidor o base de dades | Mitjana | Mitjana | Implementar gestió d'errors i excepcions, registrar logs detallats, realitzar proves abans de desplegar i assegurar respostes clares al frontend. | Equip backend | Revisió dels logs i incidències detectades durant el desenvolupament i desplegament.
+Problemes de compatibilitat amb navegadors | Baixa | Mitjana | Provar la web en els principals navegadors (Chrome, Firefox, Edge, Safari), utilitzar HTML5 i CSS3 estàndard i revisar la funcionalitat en dispositius mòbils. | Equip frontend | Proves de compatibilitat abans de cada lliurament.
+Caiguda del servidor o temps d'inactivitat | Baixa | Alta | Triar hosting fiable, configurar monitorització i alertes, preparar plans de recuperació i redundància si és necessari. | Equip backend | Comprovació periòdica del servidor i proves de recuperació.
+Errors en el frontend (formularis, interacció, disseny) | Mitjana | Mitjana | Validar formularis amb JavaScript i PHP, realitzar proves funcionals, revisar disseny responsive i assegurar una experiència d'usuari coherent. | Equip frontend | Testos setmanals i correcció immediata d'errors detectats.
+Problemes legals o drets d'autor | Baixa | Alta | Utilitzar només contingut propi o amb llicències lliures, revisar les imatges, icones i textos, documentar fonts i permisos. | Equip de gestió del projecte | Revisions puntuals abans de publicar qualsevol contingut.
+Riscos durant el desplegament o actualitzacions | Mitjana | Mitjana | Separar entorn de desenvolupament i producció, utilitzar control de versions (Git), fer proves completes abans de pujar a producció. | Equip de desenvolupament | Control de versions i registre de desplegaments amb notes de incidències.
+
