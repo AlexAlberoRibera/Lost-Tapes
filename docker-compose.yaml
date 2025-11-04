@@ -40,17 +40,19 @@ services:
       - persistent:/var/lib/mysql
     networks:
       - default
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    links:
-      - db:db
-    ports:
-      - 8000:80
-    environment:
-      MYSQL_USER: usuario
-      MYSQL_PASSWORD: 1234
-      MYSQL_ROOT_PASSWORD: 1234
-volumes:
-  persistent:
 
-    null
+
+  #phpmyadmin:
+  #  image: phpmyadmin/phpmyadmin
+  #  links:
+  #    - db:db
+  #  ports:
+  #    - 8000:80
+  #  environment:
+  #    MYSQL_USER: usuario
+  #    MYSQL_PASSWORD: 1234
+   #   MYSQL_ROOT_PASSWORD: 1234
+#volumes:
+  #persistent:
+
+   # null
