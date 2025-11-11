@@ -27,4 +27,4 @@ Aqui tienes una redireccion al fichero que contiene la informacion sobre los rie
 
 
 # GANT BASIC
-![Kanban](/docs/GantBasic)
+![Kanban](/docs/GantBasic.png)
