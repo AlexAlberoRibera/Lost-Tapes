@@ -27,3 +27,4 @@ Aqui tienes una redireccion al fichero que contiene la informacion sobre los rie
 
 
 # GANT BASIC
+[Muestra del Cant Basic](/docs/GantBasic)
