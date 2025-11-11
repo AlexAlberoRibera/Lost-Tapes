@@ -19,16 +19,6 @@
 .portada .meta{padding:0.5rem 0.75rem;background:transparent;color:black;display:flex;justify-content:space-between;align-items:center}
 .portada .meta .duracion{font-size:0.85rem;color:black}
 
-@media (max-width:900px){
-    .portada{width:220px}
-    .portada .img-wrap{height:140px}
-}
-
-@media (max-width:600px){
-    .portada{width:180px}
-    .portada .img-wrap{height:120px}
-}
-
 /* center the section title */
 .titulo{ text-align:center; width:100%; margin-top:1.5rem }
 
