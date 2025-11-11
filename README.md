@@ -23,7 +23,7 @@ http://localhost/contacto.html
 
 # RIESGOS
 Aqui tienes una redireccion al fichero que contiene la informacion sobre los riesgos
-[Documentación de los riesgos](/docs/RISKS)
+[Documentación de los riesgos](/docs/RISKS.md)
 
 
 # GANT BASIC
