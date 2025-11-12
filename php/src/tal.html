@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portada de Película</title>
+<style>
+  .pelicula {
+    display: grid;    
+    grid-template-rows: auto auto 1fr; /* fila para imagen, fila para info, fila para descripción */
+    grid-template-columns: 150px 1fr; /* columna para imagen, columna para info + texto */
+    gap: 10px; /* espacio entre filas y columnas */
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 500px;
+    background-color: #f9f9f9;
+  }
+
+  .portada {
+    grid-row: 1 / 3; /* ocupa la fila 1 y 2 */
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nombre {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .duracion {
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  .descripcion {
+    grid-column: 2 / 3; /* ocupa la columna de la info */
+    font-size: 0.95em;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+
+<div class="pelicula">
+  <img class="portada" src="portada.jpg" alt="Portada de la película">
+  
+  <div class="info">
+    <div class="nombre">Nombre de la película</div>
+    <div class="duracion">120 min</div>
+  </div>
+  
+  <div class="descripcion">
+    Esta es la descripción de la película. Aquí puedes poner un resumen de la trama o algún detalle interesante que quieras destacar.
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,19 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const portadas = document.querySelectorAll('.pelicula .portada');
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const peliculas = [
-      { selector: '.portadaAndreiRublev img', carpeta: 'andreiRublev', cantidad: 15 },
-      { selector: '.portadaBrandedToKill img', carpeta: 'brandedToKill', cantidad: 15 },
-      { selector: '.portadaHarakiri img', carpeta: 'harakiri', cantidad: 15 },
-    ];
+  portadas.forEach(img => {      
+    let index = 1;
 
-    peliculas.forEach(p => {
-      const img = document.querySelector(p.selector);
-      let index = 1;
-
-      setInterval(() => {
-        index = (index % p.cantidad) + 1;
-        img.src = `./public/img/peliculas/${p.carpeta}/${index}.png`;
-      }, 6000); // milisegundos
-    });
+    setInterval(() => {
+      index = (index % 15) + 1;  // 15 cantidad de imgs por diretorio
+      img.src = `./public/img/peliculas/${img.alt}/${index}.png`;
+    }, 6000); //milisegundos
   });
-
+});

@@ -7,7 +7,7 @@
   <title>PI Lost Tapes</title>
   <link rel="stylesheet" href="./public/css/estilo.css" />
   <link rel="stylesheet" href="./public/css/estilos_carrusel.css" />
-  <link rel="stylesheet" href="./public/css/estilos_peliculas.css">
+  <link rel="stylesheet" href="./public/css/estilos_peliculas2.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="contacto.php">Contacto</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="#">Sell</a></li>
       </ul>
@@ -61,42 +61,57 @@
     </section>
   </main>
   <script src="./js/carousel.js"></script>
-  <script src="./js/rotador_peliculas.js"></script>
 
   <h2 class="titulo">New Cult Movies</h2>
 
   <div class="peliculas">
-    <div class="portada">
-      <div class="portadaHarakiri">
-        <img src="./public/img/harakiri/1.png" alt="Harakiri">
-      </div>
-      <div class="meta">
+
+    <div class="pelicula">
+        <img class="portada" src="./public/img/peliculas/harakiri/1.png" alt="harakiri">
+
+      <div class="info">
         <span class="title">Harakiri</span>
         <span class="duracion">127'</span>
       </div>
+
+      <div class="descripcion">
+        <p>harakiri blahvlahblah</p>
+      </div>
+
     </div>
 
-    <div class="portada">
-      <div class="portadaBrandedToKill">
-        <img src="./public/img/brandedToKill/1.png" alt="Branded To Kill">
-      </div>
-      <div class="meta">
+    <div class="pelicula">
+        <img  class="portada" src="./public/img/peliculas/brandedToKill/1.png" alt="brandedToKill">
+
+      <div class="info">
         <span class="title">Branded To Kill</span>
         <span class="duracion">92'</span>
       </div>
+
+      <div class="descripcion">
+        <p>miau</p>
+      </div>
+
     </div>
 
-    <div class="portada">
-      <div class="portadaAndreiRublev">
-        <img src="./public/img/andreiRublev/1.png" alt="Andrei Rublev">
-      </div>
-      <div class="meta">
+    <div class="pelicula">
+        <img class="portada" src="./public/img/peliculas/andreiRublev/1.png" alt="andreiRublev">
+
+      <div class="info">
         <span class="title">Andrei Rublev</span>
         <span class="duracion">205'</span>
       </div>
+
+      <div class="descripcion">
+        <p>Una obra maestra de Tarkovski que explora la vida 
+          de un pintor ruso del siglo XV.</p>
+      </div>
+
     </div>
+    
 
   </div>
+  <script src="./js/rotador_peliculas.js"></script>
 </body>
 
 </html>
