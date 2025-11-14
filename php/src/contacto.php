@@ -15,10 +15,10 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="contacto.html" class="active">Contacto</a></li>
+        <li><a href="contacto.php" class="active">Contacto</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="#">Sell</a></li>
-      </ul>
+</ul>
     </nav>
 
     <form class="search-bar" action="#" method="get">

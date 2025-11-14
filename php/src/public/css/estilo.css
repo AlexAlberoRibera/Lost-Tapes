@@ -1,6 +1,13 @@
 /* Logo a la izquierda con el menu a la derecha ajustado al center-right */
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial, Helvetica, sans-serif;color:#fff}
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff
+}
 
 header {
   position: fixed;
@@ -16,7 +23,8 @@ header {
 }
 
 main {
-  padding-top: 60px; /* altura del header + pequeño margen */
+  padding-top: 60px;
+  /* altura del header + pequeño margen */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +32,11 @@ main {
 }
 
 
-header img{height:70px;width:100px;display:block}
+header img {
+  height: 70px;
+  width: 100px;
+  display: block
+}
 
 nav {
   position: absolute;
@@ -45,7 +57,8 @@ nav ul {
 nav a {
   color: #fff;
   text-decoration: none;
-  padding: 10px 12px; /* 🔹 más espacio interno */
+  padding: 10px 12px;
+  /* 🔹 más espacio interno */
   border-radius: 6px;
   display: block;
   transition: 0.3s;
@@ -73,7 +86,18 @@ h2 {
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 2rem;
+  font-weight: bold;
+  /* para negrita */
 }
+h2.section-title{
+    font-family: 'Merriweather';
+}
+h2.titulo{
+      font-family: 'Whereas recognition';
+}
+
+
+
 /* === Buscador en la cabecera === */
 .search-bar {
   margin-left: auto;
@@ -89,7 +113,8 @@ h2 {
   font-size: 16px;
   outline: none;
   width: 160px;
-  transition: width 0.3s ease, background 0.3s; /*Al empezar a buscar el tamaño del buscador aumentara un poco*/
+  transition: width 0.3s ease, background 0.3s;
+  /*Al empezar a buscar el tamaño del buscador aumentara un poco*/
 }
 
 .search-bar input:focus {
@@ -113,52 +138,64 @@ h2 {
 }
 
 .peliculas-section {
-    padding: 20px;
-    background-color: #f9f9f9;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
 .peliculas-section h5 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: #333;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
 }
 
 .peliculas {
-    display: flex;           /* Para alinear horizontalmente */
-    justify-content: space-between; /* Espacio entre cada tarjeta */
-    gap: 20px;               /* Separación uniforme */
+  display: flex;
+  /* Para alinear horizontalmente */
+  justify-content: space-between;
+  /* Espacio entre cada tarjeta */
+  gap: 20px;
+  /* Separación uniforme */
 }
 
 .pelicula {
-    background-color: #d9f8ff;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    width: 30%;              /* Cada tarjeta ocupa aproximadamente 1/3 del contenedor */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #d9f8ff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 30%;
+  /* Cada tarjeta ocupa aproximadamente 1/3 del contenedor */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .pelicula img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+span.title{
+  font-family: 'Inter',Bold ;
+}
+span.duracion{
+  font-family: 'Inter',Medium ;
 }
 
 .pelicula:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-.pelicula h4{
+
+.pelicula h4 {
   font-size: 20px;
 }
 
 .pelicula p {
-    font-size: 14px;
-    color: #555;
-    margin: 0;
-    text-align: left;
+  font-size: 14px;
+  font-family: 'PT Serif', serif; 
+  color: #555;
+  margin: 0;
+  text-align: left;
 }
-
