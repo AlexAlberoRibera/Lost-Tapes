@@ -8,6 +8,8 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
+    background-color: #383333;
+
 }
 
 /* Header fijo superior */
@@ -111,7 +113,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #383333;
   
 }
 /* ======== FORMULARIO ESTILO CELULOIDE FINAL ======== */
