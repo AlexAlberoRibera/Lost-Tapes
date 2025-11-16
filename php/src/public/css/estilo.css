@@ -201,3 +201,74 @@ span.duracion{
   margin: 0;
   text-align: left;
 }
+
+
+
+.footer {
+  margin-top: 60px;
+  background: rgba(0, 0, 0, 0.92);
+  color: #e8e8e8;
+  padding: 40px 20px;
+  font-family: 'Inter', Medium;
+}
+
+.footer-contenedor {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  align-items: start; /* alinea los items arriba */
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+  font-family: 'Merriweather';
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.footer a {
+  display: block;
+  margin-bottom: 6px;
+  color: #cccccc;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.footer-line {
+  margin: 35px auto 20px;
+  width: 80%;
+  border: none;
+  border-top: 1px solid #555;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.75;
+  font-family: 'PT Serif', serif;
+}
