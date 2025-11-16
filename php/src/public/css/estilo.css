@@ -1,6 +1,6 @@
 /* Logo a la izquierda con el menu a la derecha ajustado al center-right */
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 body {
@@ -47,6 +47,7 @@ nav {
 nav ul {
   font-size: 20px;
   list-style: none;
+  font-family: 'Inter',Medium ;
   margin: 0;
   padding: 0;
   display: flex;
@@ -125,6 +126,7 @@ h2.titulo{
 
 .search-bar button {
   background: rgba(255, 255, 255, 0.1);
+  font-family: 'Inter',Medium ;
   border: none;
   color: #fff;
   cursor: pointer;

@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PI Lost Tapes</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./public/css/estilo_Contacto.css" />
 </head>
@@ -33,20 +34,22 @@
 
       <form action="/enviar-contacto" method="post" class="form-contacto">
         <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"/>
 
         <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+        <input type="email" id="email" name="email" placeholder="tu@correo.com"/>
 
         <label for="asunto">Asunto:</label>
-        <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" required />
+        <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje"/>
 
         <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." ></textarea>
 
         <button type="submit">Enviar</button>
       </form>
     </section>
   </main>
+  <script src="./js/validacion.js"></script>
+
 </body>
 </html>

@@ -1,18 +1,15 @@
-/* ======== CABECERA / HEADER ======== */
-
+/* === Cabecera === */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   color: #fff;
-    background-color: #1a1717;
-
+  background-color: #1a1717;
 }
 
-/* Header fijo superior */
 header {
   position: fixed;
   top: 0;
@@ -26,14 +23,12 @@ header {
   z-index: 100;
 }
 
-/* Logo */
 header img {
   height: 70px;
   width: 100px;
   display: block;
 }
 
-/* Navegación centrada */
 nav {
   position: absolute;
   left: 50%;
@@ -43,6 +38,7 @@ nav {
 nav ul {
   font-size: 20px;
   list-style: none;
+  font-family: 'Inter', Medium;
   margin: 0;
   padding: 0;
   display: flex;
@@ -50,25 +46,20 @@ nav ul {
   gap: 30px;
 }
 
-nav li {
-  margin: 0;
-}
-
 nav a {
   color: #fff;
   text-decoration: none;
   padding: 10px 12px;
   border-radius: 6px;
-  display: inline-block;
-  transition: background-color 0.3s;
+  display: block;
+  transition: 0.3s;
 }
 
-nav a:hover,
-nav a.active {
-  background-color: rgba(255, 255, 255, 0.15);
+nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
-/* Barra de búsqueda (a la derecha) */
+/* === Buscador en la cabecera === */
 .search-bar {
   margin-left: auto;
   display: flex;
@@ -86,7 +77,6 @@ nav a.active {
   transition: width 0.3s ease, background 0.3s;
 }
 
-/* Efecto al enfocar */
 .search-bar input:focus {
   width: 220px;
   background: #222;
@@ -95,6 +85,7 @@ nav a.active {
 
 .search-bar button {
   background: rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', Medium;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -107,36 +98,44 @@ nav a.active {
   background: rgba(255, 255, 255, 0.25);
 }
 
+
 /* Ajuste para el contenido principal */
 main {
-  padding-top: 120px; /* Compensa la altura del header */
+  padding-top: 120px;
+  /* Compensa la altura del header */
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
+
 /* ======== FORMULARIO ESTILO CELULOIDE FINAL ======== */
 .contacto {
   position: relative;
   max-width: 600px;
   margin: 60px auto;
   padding: 30px;
-  background: #1c1c1c; /* Fondo oscuro tipo celuloide */
+  background: #1c1c1c;
+  /* Fondo oscuro tipo celuloide */
   border-radius: 8px;
   overflow: hidden;
   border: 4px solid black;
   z-index: 0;
 }
 
+.contacto.h1 {
+  font-family: 'Whereas recognition';
+}
+
 /* Textura de rayas horizontales sobre toda la tarjeta */
 .contacto .textura {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: repeating-linear-gradient(
-    rgba(255,255,255,0.05) 0 1px,
-    transparent 1px 4px
-  );
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(rgba(255, 255, 255, 0.05) 0 1px,
+      transparent 1px 4px);
   pointer-events: none;
   z-index: 1;
 }
@@ -147,21 +146,29 @@ main {
   content: "";
   position: absolute;
   top: 0;
-  width: 28px;  /* ancho del borde */
+  width: 28px;
+  /* ancho del borde */
   height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 22px,
-    #ffffff 22px,
-    #ffffff 44px
-  );
+  background: repeating-linear-gradient(to bottom,
+      transparent 0,
+      transparent 22px,
+      #ffffff 22px,
+      #ffffff 44px);
   border-radius: 4px;
   box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.2);
   z-index: 2;
 }
-.contacto::before { left: 0; }   /* borde izquierdo */
-.contacto::after { right: 0; }   /* borde derecho */
+
+.contacto::before {
+  left: 0;
+}
+
+/* borde izquierdo */
+.contacto::after {
+  right: 0;
+}
+
+/* borde derecho */
 
 /* Texto del formulario */
 .contacto h1 {
@@ -209,12 +216,14 @@ main {
 .form-contacto input:focus,
 .form-contacto textarea:focus {
   border-color: #fff;
-  box-shadow: 0 0 5px rgba(255,255,255,0.3);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .form-contacto button {
   background-color: #000;
   color: #fff;
+  font-family: Inter,Medium;
+  font-size: 30px;
   border: none;
   padding: 12px;
   border-radius: 8px;
@@ -224,5 +233,5 @@ main {
 
 .form-contacto button:hover {
   background-color: #333;
-  box-shadow: 0 0 5px rgba(255,255,255,0.2);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
