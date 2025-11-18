@@ -1,10 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['mensaje'])) {
-    echo "<p style='color:green;'>" . $_SESSION['mensaje'] . "</p>";
-    unset($_SESSION['mensaje']);
-}
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -25,7 +23,7 @@ if (isset($_SESSION['mensaje'])) {
     <img src="./public/img/Logo Tapes.png" alt="Logo Tapes" />
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="contacto.php">Contacto</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="#">Sell</a></li>
@@ -38,6 +36,12 @@ if (isset($_SESSION['mensaje'])) {
   </header>
 
   <main>
+    <?php
+    if (isset($_SESSION['estado_envio'])) {
+      echo "<p style='color:green;'>" . $_SESSION['estado_envio'] . "</p>";
+      unset($_SESSION['estado_envio']);
+    }
+    ?>
     <section class="hero">
       <h2 class="section-title">Best Memphis Lost Mixtapes</h2>
 
@@ -126,43 +130,43 @@ if (isset($_SESSION['mensaje'])) {
   <script src="./js/rotador_peliculas.js"></script>
   <footer class="footer">
     <div class="footer-contenedor">
-  
+
       <div class="footer-logo">
         <img src="./public/img/Logo Tapes.png" alt="Logo Tapes">
         <p>Lost Tapes</p>
       </div>
-  
+
       <div class="footer-links">
         <h4>Explorar</h4>
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
         <a href="#">Productos</a>
         <a href="contacto.php">Contacto</a>
         <a href="#">Vender</a>
       </div>
-  
+
       <div class="footer-info">
         <h4>Información</h4>
         <a href="#">Política de privacidad</a>
         <a href="#">Términos y condiciones</a>
         <a href="#">Aviso legal</a>
       </div>
-  
+
       <div class="footer-social">
         <h4>Síguenos</h4>
         <a href="#">Instagram</a>
         <a href="#">Twitter</a>
         <a href="#">YouTube</a>
       </div>
-  
+
     </div>
-  
+
     <hr class="footer-line">
-  
+
     <p class="footer-copy">
       © 2025 Tapes Films — Archivo digital y mixtapes ocultas del underground.
     </p>
   </footer>
-  
+
 </body>
 
 </html>

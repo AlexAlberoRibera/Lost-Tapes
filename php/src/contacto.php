@@ -36,8 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p style='color:red;'>$error</p>";
       }
     } else {
-      echo "<p style='color:green;'>Mensaje enviado con éxito.</p>";
-      header("Location: index.html");
+      $_SESSION['estado_envio'] = "Mensaje enviado con éxito.";
+      header("Location: index.php");
+      exit;
     }
   }
 }
