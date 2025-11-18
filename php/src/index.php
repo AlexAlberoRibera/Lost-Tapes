@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['mensaje'])) {
+    echo "<p style='color:green;'>" . $_SESSION['mensaje'] . "</p>";
+    unset($_SESSION['mensaje']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
