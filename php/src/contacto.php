@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <img src="./public/img/Logo Tapes.png" alt="Logo Tapes" />
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="contacto.php" class="active">Contacto</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="#">Sell</a></li>
