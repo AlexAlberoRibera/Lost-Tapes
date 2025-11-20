@@ -38,7 +38,7 @@ session_start();
   <main>
     <?php
     if (isset($_SESSION['estado_envio'])) {
-      echo "<p style='color:green;'>" . $_SESSION['estado_envio'] . "</p>";
+      echo "<div class='mensaje'>" . $_SESSION['estado_envio'] . "</div>";
       unset($_SESSION['estado_envio']);
     }
     ?>
