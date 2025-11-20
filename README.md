@@ -30,5 +30,11 @@ Aqui tienes una redireccion al fichero que contiene la informacion sobre los rie
 ![Kanban](/docs/GantBasic.png)
 
 # ROLES
-[Documentación de los riesgos](/docs/roles.md)
+Aqui hay un documento md con los roles que hay en el equipo
+[Documentación de los roles](/docs/roles.md)
+
+# Recursos
+Aqui mostraremos los recursos utilizados en nuestro proyecto
+[Documentación de los recursos](/docs/recursos.md)
+
 
