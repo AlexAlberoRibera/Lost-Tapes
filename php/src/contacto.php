@@ -12,14 +12,15 @@ $errores = [
 $erroresHtml = ''; // Para mostrar errores generales arriba del formulario
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
     // Recoger valores del formulario
     $nombre = trim($_POST["nombre"] ?? '');
     $email = trim($_POST["email"] ?? '');
     $asunto = trim($_POST["asunto"] ?? '');
     $mensaje = trim($_POST["mensaje"] ?? '');
-    $validarPHP = !isset($_POST["btn-validar"]); // Validar PHP solo si checkbox NO marcado
+    //$validarPHP = !isset($_POST["btn-validar"]); // Validar PHP solo si checkbox NO marcado
 
-    if ($validarPHP) {
+    //if ($validarPHP) {
         // Validaciones por campo
         if (empty($nombre)) $errores["nombre"] = "Por favor, ingresa tu nombre completo.";
         if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errores["email"] = "Por favor, ingresa un correo electrónico válido.";
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: index.php");
             exit;
         }
-    }
+    //}
 }
 ?>
 
@@ -43,11 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PI Lost Tapes - Contacto</title>
     <link rel="stylesheet" href="./public/css/estilo_Contacto.css" />
+      <link rel="stylesheet" href="./public/css/estilo_footer.css">
+
 </head>
 <body>
-<<<<<<< HEAD
     <header>
-        <img src="./public/img/Logo Tapes.png" alt="Logo Tapes" />
+        <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes">
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -57,19 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </ul>
         </nav>
     </header>
-=======
-  <header>
-    <img src="./public/img/Logo Tapes.png" alt="Logo Tapes" />
-    <nav>
-      <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="contacto.php" class="active">Contacto</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Sell</a></li>
-      </ul>
-    </nav>
-  </header>
->>>>>>> d4e1b8c87c2a62f0c813b282dbc748b21371337a
 
     <!-- Mensajes generales de errores o éxito -->
     <div class="errores-php" style="margin-top:90px; text-align:center;">
@@ -113,5 +102,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </main>
 
     <script src="./js/validacion.js"></script>
+    <footer class="footer">
+    <div class="footer-contenedor">
+
+      <div class="footer-logo">
+        <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes">
+        <p>Lost Tapes</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explorar</h4>
+        <a href="index.php">Home</a>
+        <a href="#">Productos</a>
+        <a href="contacto.php">Contacto</a>
+        <a href="#">Vender</a>
+      </div>
+
+      <div class="footer-info">
+        <h4>Información</h4>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Aviso legal</a>
+      </div>
+
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+      </div>
+
+    </div>
+
+    <hr class="footer-line">
+
+    <p class="footer-copy">
+      © 2025 Tapes Films — Archivo digital y mixtapes ocultas del underground.
+    </p>
+  </footer>
+
 </body>
 </html>

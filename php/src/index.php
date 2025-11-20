@@ -16,11 +16,13 @@ session_start();
   <link rel="stylesheet" href="./public/css/estilo.css" />
   <link rel="stylesheet" href="./public/css/estilos_carrusel.css" />
   <link rel="stylesheet" href="./public/css/estilos_peliculas.css">
+  <link rel="stylesheet" href="./public/css/estilo_footer.css">
+
 </head>
 
 <body>
   <header>
-    <img src="./public/img/Logo Tapes.png" alt="Logo Tapes" />
+    <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes" />
     <nav>
       <ul>
         <li><a href="index.php" class="vibrar">Home</a></li>
@@ -156,7 +158,7 @@ session_start();
     <div class="footer-contenedor">
 
       <div class="footer-logo">
-        <img src="./public/img/Logo Tapes.png" alt="Logo Tapes">
+        <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes">
         <p>Lost Tapes</p>
       </div>
 
