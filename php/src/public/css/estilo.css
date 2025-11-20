@@ -148,6 +148,15 @@ h2.titulo{
   background: rgba(255, 255, 255, 0.25);
 }
 
+.vibrar:hover {
+  animation: vibrar 0.5s infinite;
+}
+
+@keyframes vibrar {
+  5%, 25%, 45%, 65%, 85% { transform: translateX(-3px); }
+  15%, 35%, 55%, 75%, 95% { transform: translateX(3px); }
+}
+
 .peliculas-section {
   padding: 20px;
   background-color: #f9f9f9;
@@ -211,6 +220,30 @@ span.duracion{
   text-align: left;
 }
 
+.video-cine {
+  width: 100%;          
+  text-align: center;   
+  margin: 40px 0;       
+}
+
+.video-cine h2 {
+  margin-bottom: 20px;
+}
+
+.video-cine video {
+  display: block;       
+  margin: 0 auto;       
+  max-width: 100%;      
+}
+
+.video-cine-texto {
+  display: block;        
+  max-width: 720px;      
+  margin: 20px auto 0;   
+  text-align: center;    
+  line-height: 1.5;
+  color: #0f0d0d;
+}
 
 
 .footer {
