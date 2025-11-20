@@ -6,7 +6,8 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #fff
+  color: #fff;
+  background-color: white;
 }
 
 header {
@@ -69,6 +70,14 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
+/*Mensaje de confirmacion*/
+.mensaje {
+    color: black;
+    background-color:green;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
 
 main {
   padding-top: 120px;
@@ -139,6 +148,15 @@ h2.titulo{
   background: rgba(255, 255, 255, 0.25);
 }
 
+.vibrar:hover {
+  animation: vibrar 0.5s infinite;
+}
+
+@keyframes vibrar {
+  5%, 25%, 45%, 65%, 85% { transform: translateX(-3px); }
+  15%, 35%, 55%, 75%, 95% { transform: translateX(3px); }
+}
+
 .peliculas-section {
   padding: 20px;
   background-color: #f9f9f9;
@@ -202,73 +220,27 @@ span.duracion{
   text-align: left;
 }
 
-
-
-.footer {
-  margin-top: 60px;
-  background: rgba(0, 0, 0, 0.92);
-  color: #e8e8e8;
-  padding: 40px 20px;
-  font-family: 'Inter', Medium;
+.video-cine {
+  width: 100%;          
+  text-align: center;   
+  margin: 40px 0;       
 }
 
-.footer-contenedor {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  align-items: start; /* alinea los items arriba */
+.video-cine h2 {
+  margin-bottom: 20px;
 }
 
-.footer-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.video-cine video {
+  display: block;       
+  margin: 0 auto;       
+  max-width: 100%;      
 }
 
-.footer-logo img {
-  width: 80px;
-  margin-bottom: 10px;
-}
-
-.footer-logo p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.footer h4 {
-  margin-bottom: 10px;
-  font-family: 'Merriweather';
-  font-size: 18px;
-  color: #ffffff;
-}
-
-.footer a {
-  display: block;
-  margin-bottom: 6px;
-  color: #cccccc;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 15px;
-}
-
-.footer a:hover {
-  color: #ffffff;
-}
-
-.footer-line {
-  margin: 35px auto 20px;
-  width: 80%;
-  border: none;
-  border-top: 1px solid #555;
-}
-
-.footer-copy {
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.75;
-  font-family: 'PT Serif', serif;
+.video-cine-texto {
+  display: block;        
+  max-width: 720px;      
+  margin: 20px auto 0;   
+  text-align: center;    
+  line-height: 1.5;
+  color: #0f0d0d;
 }

@@ -11,22 +11,24 @@ session_start();
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PI Lost Tapes</title>
+  <title>Lost Tapes</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./public/css/estilo.css" />
   <link rel="stylesheet" href="./public/css/estilos_carrusel.css" />
   <link rel="stylesheet" href="./public/css/estilos_peliculas.css">
+  <link rel="stylesheet" href="./public/css/estilo_footer.css">
+
 </head>
 
 <body>
   <header>
-    <img src="./public/img/Logo Tapes.png" alt="Logo Tapes" />
+    <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes" />
     <nav>
       <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="contacto.php">Contacto</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Sell</a></li>
+        <li><a href="index.php" class="vibrar">Home</a></li>
+        <li><a href="contacto.php"class="vibrar">Contacto</a></li>
+        <li><a href="#" class="vibrar">Productos</a></li>
+        <li><a href="#" class="vibrar">Sell</a></li>
       </ul>
     </nav>
     <form class="search-bar" action="#" method="get">
@@ -38,12 +40,12 @@ session_start();
   <main>
     <?php
     if (isset($_SESSION['estado_envio'])) {
-      echo "<p style='color:green;'>" . $_SESSION['estado_envio'] . "</p>";
+      echo "<div class='mensaje'>" . $_SESSION['estado_envio'] . "</div>";
       unset($_SESSION['estado_envio']);
     }
     ?>
     <section class="hero">
-      <h2 class="section-title">Best Memphis Lost Mixtapes</h2>
+      <h2 class="section-title">Best Gucci Mane Mixtapes</h2>
 
       <div class="carrusel">
         <!-- Botón previo -->
@@ -81,7 +83,7 @@ session_start();
   <div class="peliculas">
 
     <div class="pelicula">
-      <img class="portada" src="./public/img/peliculas/harakiri/1.png" alt="harakiri">
+      <img class="portada" src="./public/img/peliculas/harakiri/1.jpg" alt="harakiri">
 
       <div class="info">
         <span class="title">Harakiri</span>
@@ -96,7 +98,7 @@ session_start();
     </div>
 
     <div class="pelicula">
-      <img class="portada" src="./public/img/peliculas/brandedToKill/1.png" alt="brandedToKill">
+      <img class="portada" src="./public/img/peliculas/brandedToKill/1.jpg" alt="brandedToKill">
 
       <div class="info">
         <span class="title">Branded To Kill</span>
@@ -111,7 +113,7 @@ session_start();
     </div>
 
     <div class="pelicula">
-      <img class="portada" src="./public/img/peliculas/andreiRublev/1.png" alt="andreiRublev">
+      <img class="portada" src="./public/img/peliculas/andreiRublev/1.jpg" alt="andreiRublev">
 
       <div class="info">
         <span class="title">Andrei Rublev</span>
@@ -127,12 +129,36 @@ session_start();
 
 
   </div>
+  <section class="video-cine">
+  <h2>Reconstrucción de <em>The White Mare</em></h2>
+  <video id="reproductor" width="720" height="400" preload controls loop poster="./public/img/whiteMare.jpg" class="video-cine-video">
+    <source src="./public/videos/whiteMare.webm" type='video/webm; codecs="vp8, vorbis"' />
+    <source src="./public/videos/whiteMare.ogv" type='video/ogg; codecs="theora, vorbis"' />
+    <source src="./public/videos/whiteMare.mp4" type="video/mp4" />
+  </video>
+
+  <div class="video-cine-texto">
+    <p>
+      La reconstrucción de <em>The White Mare</em>, la película de animación,
+      ha sido un proceso meticuloso que combina investigación histórica y restauración digital.
+      Cada fotograma fue cuidadosamente revisado para preservar los colores originales y
+      la esencia narrativa de la obra.
+    </p>
+
+    <p>
+      Gracias a esta labor, se ha logrado devolver a la película su esplendor visual
+      y musical, permitiendo a nuevas audiencias disfrutar de esta joya animada.
+      La reconstrucción resalta la importancia del patrimonio cinematográfico
+      y la preservación de la animación clásica.
+    </p>
+  </div>
+</section>
   <script src="./js/rotador_peliculas.js"></script>
   <footer class="footer">
     <div class="footer-contenedor">
 
       <div class="footer-logo">
-        <img src="./public/img/Logo Tapes.png" alt="Logo Tapes">
+        <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes">
         <p>Lost Tapes</p>
       </div>
 
