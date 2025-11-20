@@ -28,3 +28,7 @@ Aqui tienes una redireccion al fichero que contiene la informacion sobre los rie
 
 # GANT BASIC
 ![Kanban](/docs/GantBasic.png)
+
+# ROLES
+[Documentación de los riesgos](/docs/roles.md)
+
