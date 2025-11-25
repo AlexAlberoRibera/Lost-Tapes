@@ -1,0 +1,11 @@
+{
+    "peliculas":[
+        {
+            "id": 1,
+            "nombre": "Andrei rublev",
+            "descripcion": "Tarkovski retrata el viaje espiritual de un pintor medieval en una Rusia convulsa. Cine monumental sobre la fe, el arte y la condición humana.",
+            "duracion": 205,
+            "carpeta": "./public/img/peliculas/andreiRublev/"
+        }
+    ]
+}
