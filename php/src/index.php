@@ -15,7 +15,6 @@ session_start();
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./public/css/estilo.css" />
   <link rel="stylesheet" href="./public/css/estilos_carrusel.css" />
-  <link rel="stylesheet" href="./public/css/estilos_peliculas.css">
 </head>
 
 <body>

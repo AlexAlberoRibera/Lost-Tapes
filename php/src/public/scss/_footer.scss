@@ -1,0 +1,70 @@
+@use 'variables' as var;
+
+.footer {
+  margin-top: 60px;
+  background: var.$color-bg-footer;
+  color: #e8e8e8;
+  padding: 40px 20px;
+  font-family: var.$font-medium;
+
+  .footer-contenedor {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    align-items: start;
+  }
+
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      color: var.$color-text-light;
+    }
+  }
+
+  h4 {
+    margin-bottom: 10px;
+    font-family: var.$font-title;
+    font-size: 18px;
+    color: var.$color-text-light;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 6px;
+    color: #cccccc;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+
+    &:hover {
+      color: var.$color-text-light;
+    }
+  }
+
+  .footer-line {
+    margin: 35px auto 20px;
+    width: 80%;
+    border: none;
+    border-top: 1px solid #555;
+  }
+
+  .footer-copy {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.75;
+    font-family: var.$font-serif;
+  }
+}
