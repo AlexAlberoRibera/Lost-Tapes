@@ -1,12 +1,14 @@
-$color-bg-dark: rgba(0, 0, 0, 0.85);
-$color-bg-footer: rgba(0, 0, 0, 0.92);
-$color-bg-card: #d9f8ff;
-$color-text-light: #fff;
-$color-text-dark: #333;
-$color-text-muted: #555;
+// Colores
+$color-fondo-oscuro: rgba(0, 0, 0, 0.85);
+$color-fondo-footer: rgba(0, 0, 0, 0.92);
+$color-fondo-tarjeta: #f9f9f9;
+$color-texto-claro: #fff;
+$color-texto-oscuro: #333;
+$color-texto-secundario: #555;
 
-$font-sans: 'Arial, Helvetica, sans-serif';
-$font-serif: 'PT Serif', serif;
-$font-title: 'Merriweather';
-$font-bold: 'Inter', Bold;
-$font-medium: 'Inter', Medium;
+// Tipografías
+$fuente-general: 'Arial, Helvetica, sans-serif';
+$fuente-subtitulo: 'PT Serif', serif;
+$fuente-titulo: 'Merriweather';
+$fuente-nombrePeli: 'Inter', Bold;
+$fuente-duracion: 'Inter', Medium;

@@ -86,65 +86,78 @@ main .hero {
   text-align: center;
   margin-bottom: 4rem;
 }
-main .hero h2.titulo {
-  font-family: "Whereas recognition";
-}
 main .hero h2.section-title {
   font-family: "Merriweather";
 }
 
-.peliculas-section {
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-.peliculas-section h5 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #333;
-}
-.peliculas-section .peliculas {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-.peliculas-section .pelicula {
-  background-color: #d9f8ff;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  width: 30%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+h2.titulo {
+  font-family: "Whereas recognition";
   text-align: center;
+}
+
+.peliculas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.peliculas .pelicula {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "portada portada" "info info" "descripcion descripcion";
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-width: 500px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.peliculas-section .pelicula img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.peliculas-section .pelicula .title {
-  font-family: "Inter", Bold;
-}
-.peliculas-section .pelicula .duracion {
-  font-family: "Inter", Medium;
-}
-.peliculas-section .pelicula:hover {
+.peliculas .pelicula:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-.peliculas-section .pelicula p {
-  font-size: 14px;
-  font-family: "PT Serif", serif;
+.peliculas .pelicula .portada {
+  grid-area: portada;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.peliculas .pelicula .info {
+  grid-area: info;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+.peliculas .pelicula .info .title {
+  font-family: "Inter", Bold;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #333;
+}
+.peliculas .pelicula .info .duracion {
+  font-family: "Inter", Medium;
+  font-size: 0.9em;
   color: #555;
+  text-align: right;
+}
+.peliculas .pelicula .descripcion {
+  grid-area: descripcion;
+  font-family: "PT Serif", serif;
+  font-size: 0.95em;
+  color: #333;
+}
+.peliculas .pelicula .descripcion p {
   margin: 0;
-  text-align: left;
 }
 
 .footer {
   margin-top: 60px;
   background: rgba(0, 0, 0, 0.92);
-  color: #e8e8e8;
+  color: #fff;
   padding: 40px 20px;
   font-family: "Inter", Medium;
 }

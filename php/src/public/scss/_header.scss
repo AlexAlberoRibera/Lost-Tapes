@@ -1,7 +1,7 @@
 @use 'variables' as var;
 
 header {
-  background: var.$color-bg-dark;
+  background: var.$color-fondo-oscuro;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +26,7 @@ header {
     ul {
       font-size: 20px;
       list-style: none;
-      font-family: var.$font-medium;
+      font-family: var.$fuente-duracion;
       margin: 0;
       padding: 0;
       display: flex;
@@ -34,7 +34,7 @@ header {
       gap: 30px;
 
       a {
-        color: var.$color-text-light;
+        color: var.$color-texto-claro;
         text-decoration: none;
         padding: 10px 12px;
         border-radius: 6px;
@@ -66,15 +66,15 @@ header {
       &:focus {
         width: 220px;
         background: #222;
-        color: var.$color-text-light;
+        color: var.$color-texto-claro;
       }
     }
 
     button {
       background: rgba(255, 255, 255, 0.1);
-      font-family: var.$font-medium;
+      font-family: var.$fuente-duracion;
       border: none;
-      color: var.$color-text-light;
+      color: var.$color-texto-claro;
       cursor: pointer;
       border-radius: 6px;
       padding: 6px 10px;

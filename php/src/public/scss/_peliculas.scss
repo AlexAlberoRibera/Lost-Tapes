@@ -1,57 +1,79 @@
 @use 'variables' as var;
+$fuente-titulo: 'Whereas recognition';
 
-.peliculas-section {
-  padding: 20px;
-  background-color: #f9f9f9;
 
-  h5 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: var.$color-text-dark;
-  }
 
-  .peliculas {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
+h2.titulo {
+  font-family:$fuente-titulo;
+  text-align: center;
+}
+
+.peliculas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 
   .pelicula {
-    background-color: var.$color-bg-card;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "portada portada"
+      "info info"
+      "descripcion descripcion";
+    gap: 10px;
+    border: 1px solid #ccc;
     padding: 10px;
-    width: 30%;
+    max-width: 500px;
+    background-color: var.$color-fondo-tarjeta;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-
-    .title {
-      font-family: var.$font-bold;
-    }
-
-    .duracion {
-      font-family: var.$font-medium;
-    }
 
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    p {
-      font-size: 14px;
-      font-family: var.$font-serif;
-      color: var.$color-text-muted;
-      margin: 0;
-      text-align: left;
+    .portada {
+      grid-area: portada;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .info {
+      grid-area: info;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
+
+      .title {
+        font-family: var.$fuente-nombrePeli;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: var.$color-texto-oscuro;
+      }
+
+      .duracion {
+        font-family: var.$fuente-duracion;
+        font-size: 0.9em;
+        color: var.$color-texto-secundario;
+        text-align: right;
+      }
+    }
+
+    .descripcion {
+      grid-area: descripcion;
+      font-family: var.$fuente-subtitulo;
+      font-size: 0.95em;
+      color: var.$color-texto-oscuro;
+
+      p {
+        margin: 0;
+      }
     }
   }
 }
