@@ -1,0 +1,79 @@
+@use 'variables' as var;
+$fuente-titulo: 'Whereas recognition';
+
+
+
+h2.titulo {
+  font-family:$fuente-titulo;
+  text-align: center;
+}
+
+.peliculas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+  .pelicula {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "portada portada"
+      "info info"
+      "descripcion descripcion";
+    gap: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 500px;
+    background-color: var.$color-fondo-tarjeta;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .portada {
+      grid-area: portada;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .info {
+      grid-area: info;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
+
+      .title {
+        font-family: var.$fuente-nombrePeli;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: var.$color-texto-oscuro;
+      }
+
+      .duracion {
+        font-family: var.$fuente-duracion;
+        font-size: 0.9em;
+        color: var.$color-texto-secundario;
+        text-align: right;
+      }
+    }
+
+    .descripcion {
+      grid-area: descripcion;
+      font-family: var.$fuente-subtitulo;
+      font-size: 0.95em;
+      color: var.$color-texto-oscuro;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

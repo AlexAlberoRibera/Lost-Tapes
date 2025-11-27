@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Subir Archivo Excel o CSV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px #aaa;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #135e09;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0ac759;
+        }
+
+        .info {
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Subir archivo Excel o CSV</h2>
+        <form action="./upload_handler.php" method="post" enctype="multipart/form-data">
+            <label for="file">Selecciona un archivo:</label><br>
+            <input type="file" id="file" name="file" accept=".xlsx,.xls,.csv" required><br>
+            <span class="info">Solo se permiten archivos .xlsx, .xls o .csv</span><br><br>
+            <button type="submit">Subir Archivo</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -13,11 +13,8 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lost Tapes</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./public/css/estilo.css" />
+  <link rel="stylesheet" href="./public/css/estilos.css" />
   <link rel="stylesheet" href="./public/css/estilos_carrusel.css" />
-  <link rel="stylesheet" href="./public/css/estilos_peliculas.css">
-  <link rel="stylesheet" href="./public/css/estilo_footer.css">
-
 </head>
 
 <body>
