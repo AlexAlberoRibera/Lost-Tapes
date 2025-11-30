@@ -5,6 +5,10 @@ Colocamos en la terminal en la raíz del servidor el siguiente comando:
 docker compose up -d
 ```
 
+Para inicializar el json-server pondremos el siguiente comando
+```bash
+json-server --watch data/peliculas.json --port 3000
+```
 # DIRECCIONES WEB:
 Para poder ver la pagina principal una vez que el servidor compose se haya iniciado será la siguiente URL:
 ```bash
@@ -15,6 +19,10 @@ Y el formulario de contacto podemos si ya entramos por la URL anterior clickear 
 ```bash
 http://localhost/contacto.html
 ```
+
+# Estructura:
+
+![Kanban](docs/tree.png)
 
 
 # KANBAN
