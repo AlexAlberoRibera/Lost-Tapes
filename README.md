@@ -22,7 +22,71 @@ http://localhost/contacto.html
 
 # Estructura:
 
-![Kanban](docs/tree.png)
+```bash
+.
+├── docker-compose.yaml
+├── docs
+│   ├── GantBasic.png
+│   ├── img.png
+│   ├── Kanban.png
+│   ├── recursos.md
+│   ├── RISKS.md
+│   └── roles.md
+├── Ecommerce-PI.iml
+├── php
+│   ├── php
+│   │   └── src
+│   └── src
+│       ├── contacto.php
+│       ├── index.php
+│       ├── js
+│       │   ├── carousel.js
+│       │   ├── main.js
+│       │   ├── rotador_peliculas.js
+│       │   └── validacion.js
+│       ├── public
+│       │   ├── css
+│       │   │   ├── estilo_Contacto.css
+│       │   │   ├── estilo_footer.css
+│       │   │   ├── estilos_carrusel.css
+│       │   │   ├── estilos.css
+│       │   │   ├── estilos.css.map
+│       │   │   └── estilos_peliculas.css
+│       │   ├── data
+│       │   │   └── peliculas.json
+│       │   ├── img
+│       │   │   ├── bkgdHQ.jpg
+│       │   │   ├── bkgdLQ.jpg
+│       │   │   ├── Dictador.jpg
+│       │   │   ├── harakiri.png
+│       │   │   ├── kigbutter.png
+│       │   │   ├── ladron.png
+│       │   │   ├── Logo_Tapes.png
+│       │   │   ├── Looney_Tunes.png
+│       │   │   ├── peliculas
+│       │   │   │   ├── andreiRublev
+│       │   │   │   ├── brandedToKill
+│       │   │   │   └── harakiri
+│       │   │   ├── Trap_Story.png
+│       │   │   └── Woppenheimer.png
+│       │   ├── scss
+│       │   │   ├── estilos.scss
+│       │   │   ├── _footer.scss
+│       │   │   ├── _header.scss
+│       │   │   ├── _main.scss
+│       │   │   ├── _peliculas.scss
+│       │   │   └── _variables.scss
+│       │   └── videos
+│       │       ├── fondo.mp4
+│       │       └── whiteMare.mp4
+│       ├── upload_handler.php
+│       ├── upload.html
+│       └── uploads
+│           ├── file_692c86d09fcf3_ejemplo.csv
+│           ├── file_692c87bf67072_ejemplo.csv
+│           └── file_692c8993c2d61_ejemplo.csv
+└── README.md
+```
 
 
 # KANBAN
