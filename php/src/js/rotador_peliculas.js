@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(() => {
       index = (index % 15) + 1;  // 15 cantidad de imgs por diretorio
-      img.src = `./public/img/peliculas/${img.alt}/${index}.png`;
+      img.src = `./public/img/peliculas/${img.alt}/${index}.jpg`;
     }, 6000); //milisegundos
   });
 });

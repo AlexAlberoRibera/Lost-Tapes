@@ -1,11 +1,25 @@
 {
-    "peliculas":[
+    "peliculas": [
         {
-            "id": 1,
-            "nombre": "Andrei rublev",
+            "id": "1",
+            "nombre": "Harakiri",
+            "descripcion": "Un poderoso drama samurái que desmonta el código del honor a través de una historia contundente y humana. Una crítica feroz a la hipocresía del sistema feudal japonés.",
+            "duracion": "127",
+            "carpeta": ".\/public\/img\/peliculas\/harakiri\/"
+        },
+        {
+            "id": "2",
+            "nombre": "Branded To Kill",
+            "descripcion": "Un thriller delirante y estilizado sobre un asesino obsesionado con el olor del arroz hervido. Una explosión del cine experimental japonés de los 60.",
+            "duracion": "92",
+            "carpeta": ".\/public\/img\/peliculas\/brandedToKill\/"
+        },
+        {
+            "id": "3",
+            "nombre": "Andrei Rublev",
             "descripcion": "Tarkovski retrata el viaje espiritual de un pintor medieval en una Rusia convulsa. Cine monumental sobre la fe, el arte y la condición humana.",
-            "duracion": 205,
-            "carpeta": "./public/img/peliculas/andreiRublev/"
+            "duracion": "205",
+            "carpeta": ".\/public\/img\/peliculas\/andreiRublev\/"
         }
     ]
 }
