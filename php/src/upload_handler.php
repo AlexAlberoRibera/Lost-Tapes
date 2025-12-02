@@ -57,14 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // ============================
-    // Limpiar BOM y normalizar encabezados
+    // Normalizar encabezados
     // ============================
     $headers = array_map('trim', $data[0]);
     if (substr($headers[0], 0, 3) === "\xEF\xBB\xBF") {
         $headers[0] = substr($headers[0], 3); // quitar BOM
     }
-    $headersLower = array_map('strtolower', $headers);
 
+    $headersLower = array_map('strtolower', $headers);
     $requiredColumns = ["id", "nombre", "descripcion", "duracion", "carpeta"];
 
     foreach ($requiredColumns as $col) {
@@ -76,9 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $colIndex = array_flip($headersLower);
 
     // ============================
-    // Validar y formatear datos
+    // Procesar datos
     // ============================
-    $productos = [];
+    $peliculas = [];
     foreach ($data as $i => $row) {
         if ($i === 0) continue; // encabezado
         if (empty(array_filter($row))) continue; // ignorar filas vacías
@@ -89,11 +89,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $item[strtolower($col)] = $val;
         }
 
-        $productos[] = $item;
+        $peliculas[] = $item;
     }
 
     // ============================
-    // Guardar JSON con clave "peliculas"
+    // Guardar JSON en public/data/
     // ============================
     $jsonDir = __DIR__ . "/public/data/";
     if (!is_dir($jsonDir)) {
@@ -102,9 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $jsonPath = $jsonDir . "peliculas.json";
 
-    $jsonData = ['peliculas' => $productos]; //envolver en "peliculas"
-
-    if (file_put_contents($jsonPath, json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)) === false) {
+    if (file_put_contents($jsonPath, json_encode(['peliculas' => $peliculas], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)) === false) {
         die("Error al guardar el JSON. Verifica permisos en public/data/");
     }
 
