@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": "e95f",
+      "nom_usuari": "testx_cli",
+      "contrasenya": "hash",
+      "cognoms": "X",
+      "email": "testx_cli@example.com",
+      "nom": "Test",
+      "data_registre": "2025-12-01T00:00:00Z"
+    },
+    {
+      "id": "609f",
+      "nom_usuari": "test_cli2",
+      "contrasenya": "hash",
+      "cognoms": "X",
+      "email": "test_cli2@example.com",
+      "nom": "Test",
+      "data_registre": "2025-12-01T00:00:00Z"
+    },
+    {
+      "id": "ff61",
+      "nom_usuari": "Maxi",
+      "contrasenya": "$2y$10$H.mOZWnfnAaVx6G474YMYuyYIX8TMhCxqjDdU8RKG/B87V.k9ynOO",
+      "cognoms": "Lopez",
+      "email": "asdasdasd@gmail.com",
+      "nom": "Natxa POP",
+      "data_registre": "2025-12-01T23:07:26+00:00"
+    },
+    {
+      "id": "2a38",
+      "nom_usuari": "Manel",
+      "contrasenya": "$2y$10$AAyt8NisHFv1yc8UDZSJQOZEKxgvWQ4yvUj/3DO6tOI41CAcb.7Ai",
+      "cognoms": "Marin",
+      "email": "manelmarin@gmail.com",
+      "nom": "Manel",
+      "data_registre": "2025-12-01T23:12:11+00:00"
+    },
+    {
+      "id": "66df",
+      "nom_usuari": "Alex",
+      "contrasenya": "$2y$10$QB8qcbt3lP3GJIKfbzbXk.PcBVi3pTN3aTkoi8Biw64xsPxtAPcR2",
+      "cognoms": "Albero",
+      "email": "alexalbero@gmail.com",
+      "nom": "Alex",
+      "data_registre": "2025-12-01T23:13:28+00:00"
+    },
+    {
+      "id": "ab80",
+      "nom_usuari": "Julian",
+      "contrasenya": "$2y$10$DTmVUpj5q4LkRIMI1IpTouQfQZb9CbalHLHCJEyuoQvLhGnYw1kpK",
+      "cognoms": "Perez",
+      "email": "julianperez@gmail.com",
+      "nom": "Julian",
+      "data_registre": "2025-12-01T23:50:13+00:00"
+    }
+  ]
+}

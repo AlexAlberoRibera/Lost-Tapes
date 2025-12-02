@@ -15,31 +15,31 @@
 
   
   const CSS_MAX_WIDTH = 1000;
-
-  // Funcion para dejar las imagenes con su with natural, en caso de que la tengan. (evitar upscaling) [IA]
+  // Set a sensible max-width for each image so it is never upscaled.
+  // We keep slides at 100% container width and scale images inside them
+  // preserving aspect ratio (object-fit: contain). This keeps one slide
+  // visible at a time while the image itself won't be upscaled.
   function applyNaturalMaxWidths(){
+    const containerW = track.parentElement.clientWidth;
+    const maxAllowed = Math.min(CSS_MAX_WIDTH, Math.round(containerW * 0.92));
     items.forEach(item => {
       const img = item.querySelector('img');
-      if(img && img.naturalWidth){
-        const allowed = Math.min(CSS_MAX_WIDTH, img.naturalWidth);
-        item.style.maxWidth = allowed + 'px';
-      } else {
-        item.style.maxWidth = '';
+      if (img) {
+        // prefer naturalWidth but cap to maxAllowed
+        // remove any inline sizing so CSS (object-fit:cover) controls appearance
+        img.style.maxWidth = '';
+        img.style.width = '';
+        img.style.height = '';
+        img.style.display = '';
+        img.style.margin = '';
       }
     });
   }
 
-  // Compute and set translateX so the `current` item is centered inside the visible area [IA]
+  // With slides 100% width, centering is simply translating by current * containerWidth
   function centerCurrent(){
-    const gap = parseFloat(getComputedStyle(track).gap) || 8;
-    let leftAccum = 0;
-    for(let i = 0; i < current; i++){
-      leftAccum += items[i].getBoundingClientRect().width + gap;
-    }
-
-    const currentW = items[current].getBoundingClientRect().width;
     const containerW = track.parentElement.clientWidth;
-    const translate = Math.round(leftAccum - (containerW - currentW) / 2);
+    const translate = Math.round(current * containerW);
     track.style.transform = `translateX(${-translate}px)`;
   }
 

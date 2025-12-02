@@ -7,7 +7,7 @@ services:
     image: nginx:1.23
     container_name: webserver
     ports:
-      - 80:80
+      - 8080:80
     volumes:
       - ./php:/var/www/php
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
@@ -26,6 +26,23 @@ services:
       - ./php:/var/www/php
       - ./.docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ./.docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+    environment:
+      - JSON_SERVER_BASE=http://json-server:3000
+    depends_on:
+      - json-server
+  # JSON Server (fake REST API for users.json)
+  json-server:
+    image: node:18-alpine
+    container_name: json-server
+    working_dir: /data
+    command: sh -c "npx json-server --watch /data/users.json --port 3000"
+    ports:
+      # map to 3001 on the host to avoid collisions if host already runs json-server
+      - "3001:3000"
+    volumes:
+      # json-server will write to users.json, allow read-write
+      - ./php/data:/data:rw
+    restart: unless-stopped
   db:
     image: mysql:8.0
     ports:

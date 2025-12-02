@@ -1,12 +1,13 @@
 .carrusel {
   position: relative;
-  width: 600px;
-  height: 300px;
+  width: min(920px, 94%);
+  height: 380px;
   overflow: hidden;
   margin: auto;
   border-radius: 8px;
   border: 2px solid #ccc;
 }
+
 
 .carrusel-track {
   display: flex;
@@ -14,11 +15,17 @@
 }
 
 .carrusel-item {
-  min-width: 100%;
+  /* show exactly one slide (full container) */
+  flex: 0 0 100%;
   height: 100%;
   opacity: 0.55;
-  transform: scale(0.9);
+  transform: scale(0.95);
   transition: transform 0.45s, opacity 0.45s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden; /* ensure cover crops cleanly */
 }
 
 .carrusel-item.active {
@@ -28,6 +35,10 @@
 }
 
 .carrusel-item img {
+  /* Make images uniformly fill the slide. This intentionally uses cover
+     so different aspect ratios look consistent and the slide area is
+     completely filled. Small images may be upscaled — consider using
+     higher-res sources if available. */
   width: 100%;
   height: 100%;
   object-fit: cover;

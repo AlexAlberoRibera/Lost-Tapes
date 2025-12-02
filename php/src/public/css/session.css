@@ -1,0 +1,50 @@
+/* Minimal session-specific styles — safe to include on index only. */
+.header-left { display: flex; align-items: center; gap: 8px; }
+.session { position: relative; margin-left: 8px; z-index: 9999; display: inline-flex; align-items: center; }
+.session-btn, .session-login { position: relative; z-index: 10000; }
+.session-btn {
+  display: inline-block;
+  background: #ffffff; /* white button */
+  color: #111; /* dark text for contrast */
+  padding: 10px 16px; /* a bit larger */
+  font-size: 0.95rem;
+  min-width: 84px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.session-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.16); }
+.session-name { margin-left:6px; }
+
+/* Dropdown */
+.session-dropdown {
+  position: absolute;
+  /* place dropdown clearly below the button to avoid overlapping the logo */
+  top: calc(100% + 16px);
+  left: 0; /* align to the left edge of the button */
+  min-width: 220px;
+  background: #ffffff;
+  color: #111;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  padding: 8px;
+  display: none;
+  z-index: 10001;
+}
+.session-dropdown.show { display: block; }
+.session-info { padding: 6px 8px; border-bottom: 1px solid rgba(0,0,0,0.06); margin-bottom: 8px; }
+.session-info-name { font-weight: 800; }
+.session-info-email { font-size: 0.9rem; color: #666; }
+.session-actions { display:flex; flex-direction:column; gap:6px; }
+.session-link { color:#111; text-decoration:none; padding:8px; border-radius:6px; }
+.session-link:hover { background: rgba(0,0,0,0.04); }
+
+@media (max-width:720px) {
+  .session-name { display:none; }
+}
+
+/* Small responsive tweak so the session button stays visible on narrow widths */
+@media (max-width:720px) {
+  .session-name { display: none; }
+}

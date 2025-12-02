@@ -1,5 +1,23 @@
 <?php
 session_start();
+require_once __DIR__ . '/includes/json_connect.php';
+
+// Determine logged in user (if any)
+$user = null;
+$userId = null;
+if (!empty($_SESSION['user_id'])) {
+  $userId = $_SESSION['user_id'];
+} elseif (!empty($_COOKIE['user_id'])) {
+  $userId = $_COOKIE['user_id'];
+  $_SESSION['user_id'] = $userId;
+}
+if ($userId !== null) {
+  $u = read_user($userId);
+  if ($u !== false) {
+    // json-server may return object or array in some calls
+    $user = is_array($u) && isset($u[0]) ? $u[0] : $u;
+  }
+}
 
 ?>
 
@@ -14,12 +32,39 @@ session_start();
   <title>Lost Tapes</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./public/css/estilos.css" />
+  <link rel="stylesheet" href="./public/css/session.css" />
   <link rel="stylesheet" href="./public/css/estilos_carrusel.css" />
 </head>
 
 <body>
   <header>
-    <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes" />
+    <div class="header-left">
+      <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes" />
+
+      <!-- Session icon / menu placed between logo and nav -->
+      <div class="session">
+        <?php if (empty($user)): ?>
+          <a class="session-login" href="auth/login.php">Iniciar sesión</a>
+        <?php else: ?>
+          <button class="session-btn" id="sessionToggle" aria-haspopup="true" aria-expanded="false" title="Cuenta">
+            <?= htmlspecialchars($user['nom_usuari'] ?? $user['nom'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
+          </button>
+          <div class="session-dropdown" id="sessionDropdown" role="menu" aria-hidden="true">
+            <div class="session-info">
+              <div class="session-info-name"><?= htmlspecialchars($user['nom_usuari'] ?? $user['nom'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></div>
+              <?php if (!empty($user['email'])): ?>
+                <div class="session-info-email"><?= htmlspecialchars($user['email'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></div>
+              <?php endif; ?>
+            </div>
+            <div class="session-actions">
+              <a class="session-link" href="auth/profile.php" role="menuitem">Mi perfil</a>
+              <a class="session-link" href="auth/logout.php" role="menuitem">Cerrar sesión</a>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+
     <nav>
       <ul>
         <li><a href="index.php" class="vibrar">Home</a></li>
@@ -35,12 +80,6 @@ session_start();
   </header>
 
   <main>
-    <?php
-    if (isset($_SESSION['estado_envio'])) {
-      echo "<div class='mensaje'>" . $_SESSION['estado_envio'] . "</div>";
-      unset($_SESSION['estado_envio']);
-    }
-    ?>
     <section class="hero">
       <h2 class="section-title">Best Gucci Mane Mixtapes</h2>
 
@@ -50,13 +89,13 @@ session_start();
 
         <div class="carrusel-track">
           <article class="carrusel-item">
-            <img src="./public/img/Trap_Story.png" alt="Portada mixtape 1">
+            <img src="./public/img/bkgdHQ.jpg" alt="Portada mixtape 1">
           </article>
           <article class="carrusel-item active">
-            <img src="./public/img/Woppenheimer.png" alt="Portada mixtape 2">
+            <img src="./public/img/harakiri.png" alt="Portada mixtape 2">
           </article>
           <article class="carrusel-item">
-            <img src="./public/img/Looney_Tunes.png" alt="Portada mixtape 3">
+            <img src="./public/img/ladron.png" alt="Portada mixtape 3">
           </article>
 
         </div>
@@ -151,6 +190,7 @@ session_start();
   </div>
 </section>
   <script src="./js/rotador_peliculas.js"></script>
+  <script src="./js/main.js"></script>
   <footer class="footer">
     <div class="footer-contenedor">
 
