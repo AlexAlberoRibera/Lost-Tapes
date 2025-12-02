@@ -1,7 +1,8 @@
-version: '3.8'
-
+#version: '3.8'
+# Services
 services:
 
+  # Nginx Service
   nginx:
     image: nginx:1.23
     container_name: webserver
@@ -13,6 +14,7 @@ services:
     depends_on:
       - php
 
+  # PHP Service
   php:
     build: ./.docker/php/
     working_dir: /var/www/php
@@ -28,18 +30,23 @@ services:
       - JSON_SERVER_BASE=http://json-server:3000
     depends_on:
       - json-server
-
+  # JSON Server (fake REST API for users.json)
   json-server:
     image: node:18-alpine
     container_name: json-server
     working_dir: /data
-    command: sh -c "npx json-server --watch /data/users.json --port 3000"
+    # Watch the JSON files inside the container's /data directory. We mount
+    # the project's `php/src/public/data` into /data so json-server can read/write
+    # users.json, comments.json, ratings.json, etc.
+    command: sh -c "npx json-server --watch users.json --port 3000"
     ports:
+      # map to 3001 on the host to avoid collisions if host already runs json-server
       - "3001:3000"
     volumes:
-      - ./php/data:/data:rw
+      # mount the public data directory into /data in the container so the
+      # json-server command above (working_dir=/data) can watch `users.json`
+      - ./php/src/public/data:/data:rw
     restart: unless-stopped
-
   db:
     image: mysql:8.0
     ports:
@@ -52,6 +59,21 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - persistent:/var/lib/mysql
+    networks:
+      - default
 
+
+  #phpmyadmin:
+  #  image: phpmyadmin/phpmyadmin
+  #  links:
+  #    - db:db
+  #  ports:
+  #    - 8000:80
+  #  environment:
+  #    MYSQL_USER: usuario
+  #    MYSQL_PASSWORD: 1234
+   #   MYSQL_ROOT_PASSWORD: 1234
 volumes:
   persistent:
+
+   # null
