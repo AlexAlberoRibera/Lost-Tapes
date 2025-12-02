@@ -35,13 +35,17 @@ services:
     image: node:18-alpine
     container_name: json-server
     working_dir: /data
-    command: sh -c "npx json-server --watch /data/users.json --port 3000"
+    # Watch the JSON files inside the container's /data directory. We mount
+    # the project's `php/src/public/data` into /data so json-server can read/write
+    # users.json, comments.json, ratings.json, etc.
+    command: sh -c "npx json-server --watch users.json --port 3000"
     ports:
       # map to 3001 on the host to avoid collisions if host already runs json-server
       - "3001:3000"
     volumes:
-      # json-server will write to users.json, allow read-write
-      - ./php/data:/data:rw
+      # mount the public data directory into /data in the container so the
+      # json-server command above (working_dir=/data) can watch `users.json`
+      - ./php/src/public/data:/data:rw
     restart: unless-stopped
   db:
     image: mysql:8.0
