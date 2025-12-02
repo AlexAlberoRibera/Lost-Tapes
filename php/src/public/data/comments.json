@@ -1,0 +1,22 @@
+[
+    {
+        "id": "c692ed6e334d98",
+        "productId": 1,
+        "userId": "66df",
+        "userName": "Alex",
+        "content": "prueba-con-session-debug-2",
+        "rating": null,
+        "likes": 0,
+        "created_at": "2025-12-02T12:09:07+00:00"
+    },
+    {
+        "id": "c692ed72d7c916",
+        "productId": 1,
+        "userId": "ff61",
+        "userName": "Maxi",
+        "content": "Muy Buena Peli",
+        "rating": null,
+        "likes": 0,
+        "created_at": "2025-12-02T12:10:21+00:00"
+    }
+]

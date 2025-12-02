@@ -118,7 +118,7 @@ if ($userId !== null) {
 
   <div class="peliculas">
 
-    <div class="pelicula">
+    <a class="pelicula" href="pelicula.php?id=1">
       <img class="portada" src="./public/img/peliculas/harakiri/1.jpg" alt="harakiri">
 
       <div class="info">
@@ -131,7 +131,8 @@ if ($userId !== null) {
           contundente y humana. Una crítica feroz a la hipocresía del sistema feudal japonés.”</p>
       </div>
 
-    </div>
+  </a>
+
 
     <div class="pelicula">
       <img class="portada" src="./public/img/peliculas/brandedToKill/1.jpg" alt="brandedToKill">
@@ -191,6 +192,7 @@ if ($userId !== null) {
 </section>
   <script src="./js/rotador_peliculas.js"></script>
   <script src="./js/main.js"></script>
+    <!-- <script src="./js/comments.js"></script> -->
   <footer class="footer">
     <div class="footer-contenedor">
 

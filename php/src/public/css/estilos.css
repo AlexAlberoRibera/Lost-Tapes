@@ -117,6 +117,9 @@ h2.titulo {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
+/* ensure pelicula used as an anchor keeps link styles neutral */
+.peliculas .pelicula { text-decoration: none; color: inherit; }
 .peliculas .pelicula:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -126,6 +129,11 @@ h2.titulo {
   width: 100%;
   height: auto;
   border-radius: 6px;
+}
+.peliculas .pelicula a > .portada {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .peliculas .pelicula .info {
   grid-area: info;

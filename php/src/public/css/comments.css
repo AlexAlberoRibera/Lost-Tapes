@@ -1,0 +1,25 @@
+.comments-wrap { max-width:760px; margin:18px auto; background:#fff; padding:12px; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,0.06); }
+.comments-wrap h3 { margin:0 0 8px; font-size:1.05rem; }
+.comments-list { margin-bottom:12px; }
+.comment { padding:8px 6px; border-bottom:1px solid #eee; }
+.comment-head { font-size:0.95rem; color:#222; display:flex; gap:8px; justify-content:space-between; }
+.comment-body { margin-top:6px; color:#333; }
+.comments-form textarea { width:100%; min-height:80px; padding:8px; border-radius:6px; border:1px solid #ddd; }
+.comments-form button { margin-top:8px; padding:8px 12px; border-radius:6px; background:#000;color:#fff;border:none; cursor:pointer; }
+.muted { color:#666; }
+
+/* Rating / like button styles */
+.rating-wrap { max-width:760px; margin:12px auto; display:flex; align-items:center; gap:12px; justify-content:flex-start; }
+.like-btn {
+	display:inline-flex; align-items:center; gap:8px; padding:10px 14px; font-size:1rem; border-radius:8px; border:1px solid #ddd; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.06); cursor:pointer; transition:transform .08s ease, box-shadow .12s ease, background .12s ease;
+}
+.like-btn:hover { transform:translateY(-1px); box-shadow:0 8px 18px rgba(0,0,0,0.08); }
+.like-btn:disabled { opacity:0.6; cursor:not-allowed; }
+.like-btn.liked { background: linear-gradient(90deg,#ffcc66,#ffb84d); border-color:#ffb84d; color:#222; }
+.like-btn span { font-weight:600; }
+.rating-info { font-size:0.95rem; color:#444; }
+
+@media (max-width:700px) {
+	.rating-wrap { justify-content:center; }
+	.like-btn { font-size:1.05rem; padding:12px 16px; }
+}
