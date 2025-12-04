@@ -81,7 +81,7 @@ if ($userId !== null) {
 
   <main>
     <section class="hero">
-      <h2 class="section-title">Best Gucci Mane Mixtapes</h2>
+      <h2 class="section-title">Best Lost Media</h2>
 
       <div class="carrusel">
         <!-- Botón previo -->

@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="contrasenya">Contraseña</label>
         <input id="contrasenya" name="contrasenya" type="password" autocomplete="new-password">
         <?php if (!empty($errores['contrasenya'])): ?><div class="error"><?= htmlspecialchars($errores['contrasenya'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></div><?php endif; ?>
-        <small>Recomendada: mínimo 12 caracteres, incluir mayúscula, minúscula y número.</small>
+        <small>Requerimientos: mínimo 6 caracteres, incluir mayúscula, minúscula y número.</small>
       </div>
 
       <div class="campo">

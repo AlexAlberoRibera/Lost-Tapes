@@ -43,8 +43,3 @@
 @media (max-width:720px) {
   .session-name { display:none; }
 }
-
-/* Small responsive tweak so the session button stays visible on narrow widths */
-@media (max-width:720px) {
-  .session-name { display: none; }
-}

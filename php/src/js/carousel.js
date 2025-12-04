@@ -15,10 +15,6 @@
 
   
   const CSS_MAX_WIDTH = 1000;
-  // Set a sensible max-width for each image so it is never upscaled.
-  // We keep slides at 100% container width and scale images inside them
-  // preserving aspect ratio (object-fit: contain). This keeps one slide
-  // visible at a time while the image itself won't be upscaled.
   function applyNaturalMaxWidths(){
     const containerW = track.parentElement.clientWidth;
     const maxAllowed = Math.min(CSS_MAX_WIDTH, Math.round(containerW * 0.92));
