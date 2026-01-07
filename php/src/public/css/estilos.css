@@ -1,8 +1,8 @@
-header {
-  background: rgba(0, 0, 0, 0.85);
+/* HEADER */
+.header {
+  background: rgba(0,0,0,0.9);
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 80px;
   display: flex;
@@ -10,266 +10,94 @@ header {
   padding: 0 24px;
   z-index: 100;
 }
-header img {
-  height: 70px;
-  width: 100px;
-  display: block;
-  margin-right: 8px;
+
+.header img {
+  width: 90px;
 }
-header nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 120;
+
+.header nav {
+  margin: auto;
 }
-header nav ul {
-  font-size: 20px;
+
+.header nav ul {
+  display: flex;
+  gap: 25px;
   list-style: none;
-  font-family: "Inter", Medium;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
 }
-header nav ul a {
+
+.header nav ul a {
   color: #fff;
   text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 6px;
-  display: block;
-  transition: 0.3s;
-}
-header nav ul a:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-header .search-bar {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-header .search-bar input {
-  padding: 6px 10px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  outline: none;
-  width: 160px;
-  transition: width 0.3s ease, background 0.3s;
-}
-header .search-bar input:focus {
-  width: 220px;
-  background: #222;
-  color: #fff;
-}
-header .search-bar button {
-  background: rgba(255, 255, 255, 0.1);
-  font-family: "Inter", Medium;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 6px;
-  padding: 6px 10px;
-  transition: background 0.3s;
-}
-header .search-bar button:hover {
-  background: rgba(255, 255, 255, 0.25);
 }
 
-main {
-  padding-top: 120px;
+/* SEARCH */
+.search-bar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #000;
-}
-main .hero {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-main .hero h2.section-title {
-  font-family: "Merriweather";
+  gap: 8px;
 }
 
-h2.titulo {
-  font-family: "Whereas recognition";
-  text-align: center;
+.search-bar input {
+  padding: 6px;
 }
 
-.peliculas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-.peliculas .pelicula {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "portada portada" "info info" "descripcion descripcion";
-  gap: 10px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  max-width: 500px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+/* CARDS */
+.pelicula-card {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ensure pelicula used as an anchor keeps link styles neutral */
-.peliculas .pelicula { text-decoration: none; color: inherit; }
-.peliculas .pelicula:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-.peliculas .pelicula .portada {
-  grid-area: portada;
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-.peliculas .pelicula a > .portada {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.peliculas .pelicula .info {
-  grid-area: info;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 10px;
-}
-.peliculas .pelicula .info .title {
-  font-family: "Inter", Bold;
-  font-weight: bold;
-  font-size: 1.2em;
-  color: #333;
-}
-.peliculas .pelicula .info .duracion {
-  font-family: "Inter", Medium;
-  font-size: 0.9em;
-  color: #555;
-  text-align: right;
-}
-.peliculas .pelicula .descripcion {
-  grid-area: descripcion;
-  font-family: "PT Serif", serif;
-  font-size: 0.95em;
-  color: #333;
-}
-.peliculas .pelicula .descripcion p {
-  margin: 0;
+.pelicula-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
+.pelicula-card img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.duracion {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* FOOTER */
 .footer {
-  margin-top: 60px;
-  background: rgba(0, 0, 0, 0.92);
+  background: #111;
   color: #fff;
-  padding: 40px 20px;
-  font-family: "Inter", Medium;
-}
-.footer .footer-contenedor {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  align-items: start;
-}
-.footer .footer-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.footer .footer-logo img {
-  width: 80px;
-  margin-bottom: 10px;
-}
-.footer .footer-logo p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-}
-.footer h4 {
-  margin-bottom: 10px;
-  font-family: "Merriweather";
-  font-size: 18px;
-  color: #fff;
-}
-.footer a {
-  display: block;
-  margin-bottom: 6px;
-  color: #cccccc;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 15px;
-}
-.footer a:hover {
-  color: #fff;
-}
-.footer .footer-line {
-  margin: 35px auto 20px;
-  width: 80%;
-  border: none;
-  border-top: 1px solid #555;
-}
-.footer .footer-copy {
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.75;
-  font-family: "PT Serif", serif;
+  padding: 30px;
 }
 
-/*# sourceMappingURL=estilos.css.map */
+/* ========================= */
+/* MEDIA QUERIES PROPIAS */
+/* ========================= */
 
-/* Session / header menu styles */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-  z-index: 200; /* ensure logo+session sit above the centered nav */
+/* TABLET */
+@media (max-width: 991px) {
+  .header nav ul {
+    gap: 15px;
+  }
 }
-.session {
-  position: relative;
-  margin-left: 12px;
+
+/* MOBILE */
+@media (max-width: 575px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar {
+    margin-top: 10px;
+  }
+
+  .pelicula-card img {
+    height: 200px;
+  }
 }
-.session-login {
-  color: #fff;
-  text-decoration: none;
-  background: rgba(255,255,255,0.06);
-  padding: 6px 10px;
-  border-radius: 8px;
-}
-.session-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,0.04);
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-.session-btn .avatar {
-  display: inline-flex;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #222;
-  color: #fff;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-.session-name {
-  max-width: 140px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.session-dropdown { display: none; }
