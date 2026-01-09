@@ -101,3 +101,13 @@
     height: 200px;
   }
 }
+
+/* Video section spacing */
+.video-section {
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 600px) {
+  .video-section { margin-top: 1rem; margin-bottom: 2rem; }
+}
