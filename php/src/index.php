@@ -36,6 +36,7 @@ if ($userId !== null) {
 
   <!-- CSS propio -->
   <link rel="stylesheet" href="./public/css/estilos.css">
+  <link rel="stylesheet" href="./public/css/estilo_footer.css">
 </head>
 
 <body>
@@ -174,43 +175,44 @@ if ($userId !== null) {
 
 </main>
 
-<footer class="footer bg-dark text-light mt-5 py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mb-3">
-        <h6>Lost Tapes</h6>
-        <p class="small">Tu tienda de lost media. Encuentra películas, merchandising y ofertas exclusivas.</p>
+    <footer class="footer">
+    <div class="footer-contenedor">
+
+      <div class="footer-logo">
+        <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes">
+        <p>Lost Tapes</p>
       </div>
 
-      <div class="col-md-4 mb-3">
-        <h6>Enlaces</h6>
-        <ul class="list-unstyled small">
-          <li><a href="index.php" class="text-light">Inicio</a></li>
-          <li><a href="contacto.php" class="text-light">Contacto</a></li>
-          <li><a href="productos.php" class="text-light">Productos</a></li>
-          <li><a href="sell.php" class="text-light">Vender</a></li>
-        </ul>
+      <div class="footer-links">
+        <h4>Explorar</h4>
+        <a href="index.php">Home</a>
+        <a href="#">Productos</a>
+        <a href="contacto.php">Contacto</a>
+        <a href="#">Vender</a>
       </div>
 
-      <div class="col-md-4 mb-3">
-        <h6>Legal & Ayuda</h6>
-        <ul class="list-unstyled small">
-          <li><a href="about.php" class="text-light">Sobre nosotros</a></li>
-          <li><a href="terms.php" class="text-light">Términos y condiciones</a></li>
-          <li><a href="privacy.php" class="text-light">Política de privacidad</a></li>
-          <li><a href="help.php" class="text-light">Ayuda / FAQ</a></li>
-        </ul>
+      <div class="footer-info">
+        <h4>Información</h4>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Aviso legal</a>
       </div>
+
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+      </div>
+
     </div>
 
-    <div class="row mt-3">
-      <div class="col-12 text-center small">
-        <p class="mb-0">© <?php echo date('Y'); ?> Lost Tapes. Todos los derechos reservados.</p>
-        <p class="mb-0">Queda prohibida la reproducción total o parcial de los contenidos sin autorización.</p>
-      </div>
-    </div>
-  </div>
-</footer>
+    <hr class="footer-line">
+
+    <p class="footer-copy">
+      © 2025 Tapes Films — Archivo digital y mixtapes ocultas del underground.
+    </p>
+  </footer>
 
 <!-- Bootstrap JS (bundle includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
