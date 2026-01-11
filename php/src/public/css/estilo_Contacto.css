@@ -98,16 +98,10 @@ nav a:hover {
   background: green
 }
 
-
-/* Ajuste para el contenido principal */
-main {
-  padding-top: 120px;
-  /* Compensa la altura del header */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
+/* NOTE: The header/nav/main rules previously here were removed so the site-wide
+   shared header and spacing (defined in `estilos.css`) are used consistently.
+   Page-specific styles that affect only the contact form remain below.
+*/
 
 /* ======== FORMULARIO ESTILO CELULOIDE FINAL ======== */
 .contacto {

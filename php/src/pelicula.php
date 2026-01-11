@@ -35,43 +35,35 @@ if ($userId !== null) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title><?= htmlspecialchars($movie['nombre'] ?? 'Película', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></title>
+  <!-- Bootstrap (css) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./public/css/estilos.css">
   <link rel="stylesheet" href="./public/css/session.css">
   <link rel="stylesheet" href="./public/css/comments.css">
+  <link rel="stylesheet" href="./public/css/estilo_footer.css">
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes" />
-      <div class="session">
-        <?php if (empty($user)): ?>
-          <a class="session-login" href="auth/login.php">Iniciar sesión</a>
-        <?php else: ?>
-          <button class="session-btn" id="sessionToggle" aria-haspopup="true" aria-expanded="false"><?= htmlspecialchars($user['nom_usuari'] ?? $user['nom'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></button>
-          <div class="session-dropdown" id="sessionDropdown" role="menu" aria-hidden="true">
-            <div class="session-info"><div class="session-info-name"><?= htmlspecialchars($user['nom_usuari'] ?? $user['nom'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></div></div>
-            <div class="session-actions">
-              <a class="session-link" href="auth/profile.php">Mi perfil</a>
-              <a class="session-link" href="auth/logout.php">Cerrar sesión</a>
-            </div>
-          </div>
-        <?php endif; ?>
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.php" class="vibrar">Home</a></li>
-        <li><a href="contacto.php" class="vibrar">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<?php $show_search = false; include __DIR__ . '/includes/header.php'; ?>
 
   <main style="padding-top:120px; max-width:1000px; margin:24px auto;">
     <article class="movie-detail">
       <h1><?= htmlspecialchars($movie['nombre'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></h1>
       <div style="display:flex; gap:18px; align-items:flex-start;">
         <div style="flex:0 0 420px;">
-          <img src="<?= htmlspecialchars($movie['carpeta'] . '1.jpg', ENT_QUOTES) ?>" alt="<?= htmlspecialchars($movie['nombre'], ENT_QUOTES) ?>" style="width:100%; border-radius:8px;">
+          <?php
+            // Determinar ruta de imagen para la película (soporta 'imagen' o 'carpeta')
+            if (!empty($movie['imagen'])) {
+              $img = $movie['imagen'];
+            } elseif (!empty($movie['carpeta'])) {
+              $img = $movie['carpeta'] . '1.jpg';
+            } else {
+              $img = './public/img/peliculas/default.jpg';
+            }
+            // Normalizar y limpiar ruta
+            $img = str_replace('./', '', $img);
+            $img = preg_replace('#/+#', '/', $img);
+          ?>
+          <img src="/<?php echo htmlspecialchars($img, ENT_QUOTES); ?>" alt="<?php echo htmlspecialchars($movie['nombre'], ENT_QUOTES); ?>" style="width:100%; border-radius:8px;">
         </div>
         <div style="flex:1;">
           <p><strong>Duración:</strong> <?= htmlspecialchars($movie['duracion'] ?? '-', ENT_QUOTES) ?>'</p>
@@ -97,6 +89,8 @@ if ($userId !== null) {
       </section>
     </article>
   </main>
+
+  <?php include __DIR__ . '/includes/footer.php'; ?>
 
   <script src="./js/main.js"></script>
   <script src="./js/comments.js"></script>

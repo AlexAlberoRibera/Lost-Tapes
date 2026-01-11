@@ -21,5 +21,48 @@
             "duracion": "205",
             "carpeta": ".\/public\/img\/peliculas\/andreiRublev\/"
         }
+            ,
+            {
+                "id": "4",
+                "nombre": "Dictador (single image)",
+                "descripcion": "Objeto encontrado: imagen promocional etiquetada como 'Dictador'.",
+                "duracion": "—",
+                "imagen": ".\/public\/img\/Dictador.jpg"
+            },
+            {
+                "id": "5",
+                "nombre": "Looney Tunes (remix)",
+                "descripcion": "Archivado: arte gráfico con estética ochentera.",
+                "duracion": "—",
+                "imagen": ".\/public\/img\/Looney_Tunes.png"
+            },
+            {
+                "id": "6",
+                "nombre": "Woppenheimer",
+                "descripcion": "Fragmento sonoro / póster encontrado en cinta analógica.",
+                "duracion": "—",
+                "imagen": ".\/public\/img\/Woppenheimer.png"
+            },
+            {
+                "id": "7",
+                "nombre": "Trap Story",
+                "descripcion": "Muestra de música y arte visual asociada al underground.",
+                "duracion": "—",
+                "imagen": ".\/public\/img\/Trap_Story.png"
+            },
+            {
+                "id": "8",
+                "nombre": "Kigbutter",
+                "descripcion": "Imagen de archivo sin metadatos completos.",
+                "duracion": "—",
+                "imagen": ".\/public\/img\/kigbutter.png"
+            },
+            {
+                "id": "9",
+                "nombre": "Ladrón",
+                "descripcion": "Fotografía encontrada en cinta rota.",
+                "duracion": "—",
+                "imagen": ".\/public\/img\/ladron.png"
+            }
     ]
 }

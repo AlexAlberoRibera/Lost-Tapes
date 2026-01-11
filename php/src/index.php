@@ -14,14 +14,10 @@ if (!empty($_SESSION['user_id'])) {
 if ($userId !== null) {
   $u = read_user($userId);
   if ($u !== false) {
-    // json-server may return object or array in some calls
     $user = is_array($u) && isset($u[0]) ? $u[0] : $u;
   }
 }
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -41,28 +37,10 @@ if ($userId !== null) {
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <img src="./public/img/Logo_Tapes.png" alt="Logo">
-
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="contacto.php">Contacto</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Sell</a></li>
-    </ul>
-  </nav>
-
-  <form class="search-bar">
-    <input type="text" placeholder="Buscar...">
-    <button>Buscar</button>
-  </form>
-</header>
+<?php $show_search = false; include __DIR__ . '/includes/header.php'; ?>
 
 <main class="container mt-5 pt-5">
 
-  <!-- HERO -->
   <!-- HERO / Carousel -->
   <section class="text-center mb-5">
     <h2 class="section-title">New Cult Movies</h2>
@@ -161,7 +139,6 @@ if ($userId !== null) {
   </div>
 
     <!-- VIDEO PROMOCIONAL -->
-    <!-- Se añade margen superior para mostrar el vídeo un poco más abajo y se activan los controles -->
     <section class="mb-5 video-section mt-5">
     <div class="container">
       <div class="ratio ratio-16x9">
@@ -175,47 +152,7 @@ if ($userId !== null) {
 
 </main>
 
-    <footer class="footer">
-    <div class="footer-contenedor">
-
-      <div class="footer-logo">
-        <img src="./public/img/Logo_Tapes.png" alt="Logo Tapes">
-        <p>Lost Tapes</p>
-      </div>
-
-      <div class="footer-links">
-        <h4>Explorar</h4>
-        <a href="index.php">Home</a>
-        <a href="#">Productos</a>
-        <a href="contacto.php">Contacto</a>
-        <a href="#">Vender</a>
-      </div>
-
-      <div class="footer-info">
-        <h4>Información</h4>
-        <a href="#">Política de privacidad</a>
-        <a href="#">Términos y condiciones</a>
-        <a href="#">Aviso legal</a>
-      </div>
-
-      <div class="footer-social">
-        <h4>Síguenos</h4>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
-        <a href="#">YouTube</a>
-      </div>
-
-    </div>
-
-    <hr class="footer-line">
-
-    <p class="footer-copy">
-      © 2025 Tapes Films — Archivo digital y mixtapes ocultas del underground.
-    </p>
-  </footer>
-
-<!-- Bootstrap JS (bundle includes Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<?php include __DIR__ . '/includes/footer.php' ?? null; ?>
 
 </body>
 </html>
