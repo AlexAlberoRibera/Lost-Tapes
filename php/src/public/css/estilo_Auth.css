@@ -26,6 +26,6 @@ body { margin:0; font-family: 'Source Sans 3', sans-serif; background:#111; colo
 .auth-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:14px; }
 .muted { color:#666; font-size:0.95rem; }
 
-@media (max-width:600px) {
+@media (max-width:575px) {
   .auth-wrapper { margin:2rem 16px; }
 }

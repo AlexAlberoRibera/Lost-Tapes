@@ -40,6 +40,6 @@
 .session-link { color:#111; text-decoration:none; padding:8px; border-radius:6px; }
 .session-link:hover { background: rgba(0,0,0,0.04); }
 
-@media (max-width:720px) {
+@media (max-width:767px) {
   .session-name { display:none; }
 }

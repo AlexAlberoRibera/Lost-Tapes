@@ -139,7 +139,7 @@ if ($userId !== null) {
   </div>
 
     <!-- VIDEO PROMOCIONAL -->
-    <section class="mb-5 video-section mt-5">
+    <section id= "video" class="mb-5 video-section mt-5">
     <div class="container">
       <div class="ratio ratio-16x9">
         <video id="reproductor" class="w-100 h-100" controls preload="metadata" loop playsinline loading="lazy" poster="./public/img/poster.jpg">

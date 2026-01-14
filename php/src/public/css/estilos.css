@@ -1,6 +1,7 @@
 /* HEADER */
 .header {
-  background: rgba(0,0,0,0.65); /* menos contraste que antes */
+  background: rgba(0, 0, 0, 0.65);
+  /* menos contraste que antes */
   position: fixed;
   top: 0;
   width: 100%;
@@ -11,18 +12,14 @@
   z-index: 100;
 }
 
-/* Hide common PHP debug toolbars injected in development environments */
-/* Known debug toolbars / widgets */
-#phpdebugbar, .phpdebugbar, #debugbar, .debugbar, #php-debugbar, .php-debugbar, .phpdebugbar_widget,
-.sf-toolbar, #sfwdt, #sf-toolbar, .sf-toolbar-block, .sf-toolbar-clear,
-.xhprof, #xhprof, #xhprof_toolbar, .xhprof_table, .xhprof_css,
-.kint, .kint-viewer, #kint, .kint-wrapper,
-#clockwork, .clockwork, #php-console, .php-console, #php_console, .php_console,
-#phpdebug, .phpdebug { display: none !important; }
+
 
 /* Fallback: hide extremely small fixed tables/toolbars that appear at top-left (common debug UIs)
    This targets elements positioned fixed at top with small width/height. Use with caution. */
-body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="position:fixed"][style*="top:"] { display: none !important; }
+body>*[style*="position:fixed"][style*="top:"] table,
+body>*[style*="position:fixed"][style*="top:"] {
+  display: none !important;
+}
 
 .header img {
   width: 70px;
@@ -44,7 +41,7 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
 }
 
 .header nav ul a {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-weight: 500;
   padding: 6px 4px;
@@ -71,7 +68,7 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
 
 .pelicula-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 .pelicula-card img {
@@ -88,12 +85,65 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
 .footer {
   background: #111;
   color: #fff;
-  padding: 30px;
+  padding: 40px 20px;
 }
 
-/* ========================= */
-/* MEDIA QUERIES PROPIAS */
-/* ========================= */
+/* FOOTER: responsive grid-based layout (fluid wrap with min width)
+   - Uses auto-fit + minmax so columns wrap smoothly at intermediate widths
+*/
+.footer-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px 32px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6px 12px;
+}
+
+.footer-contenedor .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-contenedor h4 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.footer-contenedor a { display: block; margin-bottom: 6px; }
+
+/* Centrar el contenido del footer*/
+.footer-contenedor .footer-links,
+.footer-contenedor .footer-info,
+.footer-contenedor .footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-contenedor h4 { text-align: center; }
+
+@media (max-width: 767px) {
+  .footer-contenedor { gap: 18px; }
+  .footer-contenedor .footer-logo img { width: 64px; }
+}
+
+@media (max-width: 480px) {
+  .footer-contenedor { text-align: center; }
+  .footer-contenedor .footer-logo { justify-content: center; }
+  .footer-contenedor a { margin: 6px auto; }
+}
+
+/* Forzar 2 columnas y poner orden footer */
+@media (min-width: 600px) and (max-width: 990px) {
+  .footer-contenedor { grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+  .footer-contenedor .footer-logo { grid-column: 1; grid-row: 1; }
+  .footer-contenedor .footer-social { grid-column: 2; grid-row: 2; }
+  .footer-contenedor .footer-links { grid-column: 2; grid-row: 1; }
+  .footer-contenedor .footer-info { grid-column: 1; grid-row: 2; }
+}
+
 
 /* TABLET */
 @media (max-width: 991px) {
@@ -102,8 +152,8 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
   }
 }
 
-/* MOBILE */
-@media (max-width: 575px) {
+/* MOBILE / collapse breakpoint (Bootstrap md <= 767px) */
+@media (max-width: 767px) {
   .header {
     flex-direction: column;
     height: auto;
@@ -113,9 +163,9 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
   .header nav ul {
     flex-direction: column;
     align-items: center;
+    font-size: 1rem;
   }
 
-  /* en móvil el nav vuelve a su flujo normal (no absolute) */
   .header nav {
     position: static;
     transform: none;
@@ -128,21 +178,36 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
   .pelicula-card img {
     height: 200px;
   }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  body {
+    padding-top: 110px;
+  }
+
+  .video-section{
+    display: none;
+  }
 }
 
-/* Video section spacing */
 .video-section {
   margin-top: 2.5rem;
   margin-bottom: 3.5rem;
 }
 
-@media (max-width: 600px) {
-  .video-section { margin-top: 1rem; margin-bottom: 2rem; }
+@media (max-width: 575px) {
+  .video-section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
 }
 
-/* Larger, clearer headings and nav/footer sizing */
+
 .section-title {
-  font-size: 2rem; /* índice principal más grande */
+  font-size: 2rem;
+
   font-weight: 600;
   letter-spacing: 0.2px;
   margin-bottom: 1rem;
@@ -154,7 +219,7 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
 }
 
 .header nav ul a {
-  font-size: 1.05rem; /* menú ligeramente mayor */
+  font-size: 1.05rem;
 }
 
 .footer h4 {
@@ -164,13 +229,22 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
 
 .footer a {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
+
 @media (max-width: 767px) {
-  .section-title { font-size: 1.45rem; }
-  .header nav ul a { font-size: 1rem; }
-  .footer a { font-size: 0.95rem; }
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .header nav ul a {
+    font-size: 1rem;
+  }
+
+  .footer a {
+    font-size: 0.95rem;
+  }
 }
 
 /* Global theme variables and consistent typography for site-wide elements */
@@ -178,10 +252,12 @@ body > *[style*="position:fixed"][style*="top:"] table, body > *[style*="positio
   --site-bg: #ffffff;
   --text-color: #222227;
   --muted-color: #6b6b6b;
-  --accent-color: #0d6efd; /* bootstrap primary-ish */
-  --header-bg: rgba(0,0,0,0.75);
-  --header-height: 70px; /* global header height used to offset fixed header */
-  --header-text: rgba(255,255,255,0.95);
+  --accent-color: #0d6efd;
+  /* bootstrap primary-ish */
+  --header-bg: rgba(0, 0, 0, 0.75);
+  --header-height: 70px;
+  /* global header height used to offset fixed header */
+  --header-text: rgba(255, 255, 255, 0.95);
   --footer-bg: #0b0b0b;
 }
 
@@ -190,7 +266,6 @@ body {
   background: var(--site-bg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   line-height: 1.45;
-  /* Ensure pages are pushed below the fixed header consistently across all pages */
   padding-top: var(--header-height);
 }
 
@@ -199,7 +274,9 @@ body {
   background: var(--header-bg);
 }
 
-.header .navbar-brand img { width: 72px; }
+.header .navbar-brand img {
+  width: 72px;
+}
 
 .header nav ul a {
   color: var(--header-text);
@@ -207,7 +284,8 @@ body {
   padding: 8px 6px;
 }
 
-.header nav ul a.active, .header nav ul a:hover {
+.header nav ul a.active,
+.header nav ul a:hover {
   color: #fff;
   text-decoration: none;
 }
@@ -217,21 +295,32 @@ body {
   color: #fff;
 }
 
-.footer a { color: rgba(255,255,255,0.9); }
+.footer a {
+  color: rgba(255, 255, 255, 0.9);
+}
 
-/* Ensure productos.php search collapse doesn't inherit surprising widths */
 .header-search-panel {
   min-width: 220px;
   max-width: 520px;
 }
 
-/* Accessibility tweaks */
-.header a, .footer a { outline-color: var(--accent-color); }
+/* Ensure the navbar toggler is always on top and the collapsed menu fills header width */
+.navbar-toggler {
+  z-index: 1300; /* above header content */
+}
 
-/* Small-screen adjustments to keep nav readable */
-@media (max-width: 575px) {
-  .header nav ul a { font-size: 1rem; }
-  .section-title { font-size: 1.4rem; }
-  /* On small screens header becomes taller; increase the offset to avoid overlap */
-  body { padding-top: 110px; }
+@media (max-width: 767px) {
+  .navbar-collapse {
+    width: 100%;
+    background: var(--header-bg);
+    padding: 8px 12px;
+    margin-top: 6px;
+    border-radius: 6px;
+  }
+  .navbar-collapse.show { box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+}
+
+.header a,
+.footer a {
+  outline-color: var(--accent-color);
 }
