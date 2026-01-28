@@ -1,47 +1,99 @@
-.pelicula {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Columna para imagen y columna para info+descripcion */
-    grid-template-rows: 1fr 1fr;      /* Fila para info, fila para descripción */
+/* ============================= */
+/* PELÍCULA CARD GRID */
+/* ============================= */
+.pelicula-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas: portada + info */
+  grid-template-rows: auto auto auto; /* Fila portada, fila info, fila descripción */
+  grid-template-areas:
+    "portada portada"
+    "info info"
+    "descripcion descripcion";
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.pelicula-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Ignorar el card-body para el grid */
+.pelicula-card .card-body {
+  display: contents; /* Los hijos (.d-flex y .card-text) forman parte del grid */
+}
+
+/* Portada */
+.pelicula-card .card-img-top {
+  grid-area: portada;
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* Info (Título + Duración) */
+.pelicula-card .d-flex {
+  grid-area: info;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pelicula-card .card-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.pelicula-card .duracion {
+  font-size: 0.9em;
+  color: #555;
+  text-align: right;
+}
+
+/* Descripción */
+.pelicula-card .card-text {
+  grid-area: descripcion;
+  font-size: 0.95em;
+  color: #333;
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* ============================= */
+/* MODO OSCURO */
+body.tema-oscuro .pelicula-card {
+  background-color: #222;
+  border: 1px solid #444;
+}
+
+body.tema-oscuro .pelicula-card .card-title {
+  color: #e8e8e8;
+}
+
+body.tema-oscuro .pelicula-card .duracion,
+body.tema-oscuro .pelicula-card .card-text {
+  color: #ccc;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+@media (max-width: 767px) {
+  .pelicula-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
-      "portada portada"
-      "info info"
-      "descripcion descripcion";
-    gap: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    max-width: 500px;
-    background-color: #f9f9f9;
+      "portada"
+      "info"
+      "descripcion";
   }
-  
-  .portada {
-    grid-area: portada;
+
+  .pelicula-card .d-flex {
     width: 100%;
-    height: auto;
-    border-radius: 6px;
   }
-  
-  .info {
-    grid-area: info;
-    display: grid;
-    grid-template-columns: 1fr auto; /* título a la izquierda, duración a la derecha */
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .title {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #333;
-  }
-  
-  .duracion {
-    font-size: 0.9em;
-    color: #555;
-    text-align: right;
-  }
-  
-  .descripcion {
-    grid-area: descripcion;
-    font-size: 0.95em;
-    color: #333;
-  }  
+}

@@ -1,9 +1,10 @@
 .footer {
   margin-top: 60px;
-  background: rgba(0, 0, 0, 0.92);
-  color: #e8e8e8;
+  background: black;
+  color: #111; /* texto principal */
   padding: 40px 20px;
   font-family: 'Inter', Medium;
+  transition: background 0.3s, color 0.3s;
 }
 
 .footer-contenedor {
@@ -30,7 +31,7 @@
 .footer-logo p {
   font-size: 18px;
   font-weight: bold;
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer h4 {
@@ -43,21 +44,21 @@
 .footer a {
   display: block;
   margin-bottom: 6px;
-  color: #cccccc;
+  color: #948d8d;
   text-decoration: none;
   transition: 0.3s;
   font-size: 15px;
 }
 
 .footer a:hover {
-  color: #ffffff;
+  color: #ff6600;
 }
 
 .footer-line {
   margin: 35px auto 20px;
   width: 80%;
   border: none;
-  border-top: 1px solid #555;
+  border-top: 1px solid #ccc;
 }
 
 .footer-copy {
@@ -65,4 +66,33 @@
   font-size: 14px;
   opacity: 0.75;
   font-family: 'PT Serif', serif;
+  color: #ff6600;
 }
+
+/* ============================= */
+/* MODO OSCURO */
+body.tema-oscuro .footer {
+  background: #222;
+  color: #e8e8e8;
+}
+
+body.tema-oscuro .footer-logo p,
+body.tema-oscuro .footer h4,
+body.tema-oscuro .footer a,
+body.tema-oscuro .footer-copy {
+  color: #e8e8e8;
+}
+
+body.tema-oscuro .footer a:hover {
+  color: #ffffff;
+}
+
+body.tema-oscuro .footer-line {
+  border-top: 1px solid #555;
+}
+/* Footer oscuro */
+
+body.tema-oscuro .footer a {
+  color: #ff6600;
+}
+

@@ -1,0 +1,67 @@
+#accesibilidad {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+#accesibilidad button {
+  display: block;
+  margin-bottom: 5px;
+  padding: 8px 10px;
+  font-size: 1rem;
+}
+
+#menuAccesibilidad {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+#menuAccesibilidad[hidden] {
+  display: none;
+}
+
+
+#accesibilidad button:hover,
+#menuAccesibilidad button:hover {
+    background: #333;
+}
+
+button:focus {
+    outline: 3px solid rgb(0, 0, 0);
+}
+
+/* Tema oscuro */
+body.tema-oscuro {
+    --site-bg: #111;
+    --text-color: #e8e8e8;
+    --muted-color: #999;
+    --header-bg: #111; /* fondo oscuro del header */
+    --header-text: #fff; /* letras blancas */
+    --footer-bg: #222;
+    background-color: var(--site-bg);
+    color: var(--text-color);
+}
+
+/* Header en tema oscuro */
+body.tema-oscuro .header {
+    background: var(--header-bg);
+    color: var(--header-text);
+}
+
+body.tema-oscuro .header a,
+body.tema-oscuro .header a.nav-link {
+    color: var(--header-text); /* enlaces blancos */
+}
+
+/* Footer en tema oscuro */
+body.tema-oscuro .footer {
+    background: var(--footer-bg);
+    color: var(--text-color);
+}
+
+body.tema-oscuro a {
+    color: var(--accent-color); /* links del resto de la página si tienes variable de acento */
+}

@@ -1,34 +1,44 @@
-document.addEventListener('DOMContentLoaded', function () {
-	const toggle = document.getElementById('sessionToggle');
-	const dropdown = document.getElementById('sessionDropdown');
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("toggleAccesibilidad");
+  const menu = document.getElementById("menuAccesibilidad");
 
-	if (!toggle || !dropdown) return;
+  if (!toggle || !menu) return;
 
-	toggle.addEventListener('click', function (e) {
-		e.preventDefault();
-		const isShown = dropdown.classList.toggle('show');
-		toggle.setAttribute('aria-expanded', isShown ? 'true' : 'false');
-		dropdown.setAttribute('aria-hidden', isShown ? 'false' : 'true');
-	});
+  // Mostrar / ocultar menú
+  toggle.addEventListener("click", () => {
+    const abierto = !menu.hasAttribute("hidden");
+    menu.toggleAttribute("hidden");
+    toggle.setAttribute("aria-expanded", String(!abierto));
+  });
 
-	// close when clicking outside
-	document.addEventListener('click', function (e) {
-		if (!dropdown.classList.contains('show')) return;
-		const target = e.target;
-		if (!dropdown.contains(target) && !toggle.contains(target)) {
-			dropdown.classList.remove('show');
-			toggle.setAttribute('aria-expanded', 'false');
-			dropdown.setAttribute('aria-hidden', 'true');
-		}
-	});
+  // Cambiar tamaño de letra
+  let tamano = localStorage.getItem("tamanoLetra");
+  tamano = tamano ? parseInt(tamano) : 16;
+  document.body.style.fontSize = tamano + "px";
 
-	// close on Escape
-	document.addEventListener('keydown', function (e) {
-		if (e.key === 'Escape' && dropdown.classList.contains('show')) {
-			dropdown.classList.remove('show');
-			toggle.setAttribute('aria-expanded', 'false');
-			dropdown.setAttribute('aria-hidden', 'true');
-			toggle.focus();
-		}
-	});
+  document.getElementById("aumentar").addEventListener("click", () => {
+    tamano++;
+    document.body.style.fontSize = tamano + "px";
+    localStorage.setItem("tamanoLetra", tamano);
+  });
+
+  document.getElementById("reducir").addEventListener("click", () => {
+    tamano--;
+    document.body.style.fontSize = tamano + "px";
+    localStorage.setItem("tamanoLetra", tamano);
+  });
+
+  // Tema claro / oscuro
+  document.getElementById("tema").addEventListener("click", () => {
+    document.body.classList.toggle("tema-oscuro");
+  });
+
+  // Subir / bajar
+  document.getElementById("subir").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.getElementById("bajar").addEventListener("click", () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  });
 });
