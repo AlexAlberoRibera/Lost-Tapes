@@ -155,6 +155,10 @@ body.tema-oscuro .header button {
   color: #fff ;
   border-color: #fff ;
 }
+h2.tema-oscuro,
+body.tema-oscuro .section-title {
+  color: #e8e8e8 ;
+}
 
 body.tema-oscuro .header a:hover,
 body.tema-oscuro .header .nav-link:hover,

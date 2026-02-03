@@ -14,19 +14,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cambiar tamaño de letra
   let tamano = localStorage.getItem("tamanoLetra");
   tamano = tamano ? parseInt(tamano) : 16;
-  document.body.style.fontSize = tamano + "px";
+
+  function aplicarTamano() {
+    document.body.style.fontSize = tamano + "px";
+
+    document.querySelectorAll("h2").forEach(h2 => {
+      h2.style.fontSize = (tamano + 6) + "px"; // opcional: un poco más grande
+    });
+     document.querySelectorAll("h5").forEach(h5 => {
+      h5.style.fontSize = (tamano + 4) + "px"; // opcional: un poco más grande
+    });
+  }
+
+  aplicarTamano();
 
   document.getElementById("aumentar").addEventListener("click", () => {
     tamano++;
-    document.body.style.fontSize = tamano + "px";
+    aplicarTamano();
     localStorage.setItem("tamanoLetra", tamano);
   });
 
   document.getElementById("reducir").addEventListener("click", () => {
     tamano--;
-    document.body.style.fontSize = tamano + "px";
+    aplicarTamano();
     localStorage.setItem("tamanoLetra", tamano);
   });
+
 
   // Tema claro / oscuro
   document.getElementById("tema").addEventListener("click", () => {
