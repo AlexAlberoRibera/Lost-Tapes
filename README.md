@@ -16,3 +16,11 @@ Rutes disponibles:
 - GET /api/products → Llista paginada de productes
   - Paràmetres opcionals: category, q, per_page
 - GET /api/products/{id} → Detall d’un producte
+
+
+
+# Como arrancar el proyecto
+
+./vendor/bin/sail up -d
+
+npm run build(esto no lo se)
