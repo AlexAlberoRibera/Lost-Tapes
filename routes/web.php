@@ -3,9 +3,14 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductImportController;
+use App\Http\Controllers\Admin\ProductAdminController;
 
 Route::get('/products/import', [ProductImportController::class, 'showForm']);
 Route::post('/products/import', [ProductImportController::class, 'import'])->name('products.import');
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('products', ProductAdminController::class);
+});
+
 
 Route::get('/', function () {
     return view('welcome');
