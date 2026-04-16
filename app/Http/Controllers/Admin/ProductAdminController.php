@@ -40,9 +40,13 @@ class ProductAdminController extends Controller {
     }
 
     // PUT /products/{id}/edit
-    public function update(Request $request, Product $product) {
-        $this->servei->actualitzar($product, $request->validated());
-        return redirect()->route('admin.products.index')->with('ok', 'products actualitzat');
+    public function update(UpdateProductRequest $request, Product $product)
+    {
+        $data = $request->validated();    
+        $product->update($data);    
+        return redirect()
+            ->route('admin.products.index')
+            ->with('success', 'Producto actualizado correctamente');
     }
 
     // DELETE /products/{id}

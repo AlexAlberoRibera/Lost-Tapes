@@ -1,5 +1,5 @@
 @extends('layouts.products')
-@section('title', "Guia de Productos")
+@section('title', "Lost Tapes")
 
 @section('content')
 <h1 class="text-3xl font-bold text-blue-800 mb-6">Guia de Productos</h1>
@@ -10,7 +10,7 @@
 
 @can('create', Product::class)
 <p class="mb-4">
-  <a href="{{ route('products.create') }}" class="bg-blue-600 text-white px-3 py-2 rounded">Nuevo Producto</a>
+  <a href="{{ route('admin.products.create') }}" class="bg-blue-600 text-white px-3 py-2 rounded">Nuevo Producto</a>
 </p>
 @endcan
 
@@ -31,14 +31,14 @@
       <td class="border border-gray-300 p-2">{{ $product->description }}</td>
       <td class="border border-gray-300 p-2 flex space-x-2">
         @can('update', $product)
-            <a href="{{ route('products.edit', $product->id) }}"
+            <a href="{{ route('admin.products.edit', $product->id) }}"
               class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-600 flex items-center space-x-1">
                 <span>✏️</span>
             </a>
         @endcan
         @can('delete',$product)
-            <form action="{{ route('products.destroy', $product->id) }}" method="POST"
-                  onsubmit="return confirm('Segur que vols eliminar aquest product?');">
+            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
+              onsubmit="return confirm('Segur que vols eliminar?')">
                 @csrf
                 @method('DELETE')
                 <button type="submit"

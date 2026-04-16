@@ -7,9 +7,12 @@ use App\Http\Controllers\Admin\ProductAdminController;
 
 Route::get('/products/import', [ProductImportController::class, 'showForm']);
 Route::post('/products/import', [ProductImportController::class, 'import'])->name('products.import');
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('products', ProductAdminController::class);
-});
+Route::middleware(['auth', 'role:admin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('products', ProductAdminController::class);
+    });
 
 
 Route::get('/', function () {
