@@ -7,10 +7,20 @@ require 'recipe/laravel.php';
 set('application', 'Lost-Tapes');
 set('repository', 'https://github.com/AlexAlberoRibera/Lost-Tapes.git');
 set('git_tty', true);
+set('branch', 'documentacionApi');
 
-add('shared_files', []);
-add('shared_dirs', []);
-//add('writable_dirs', []);
+set('writable_dirs', [
+    'storage',
+    'bootstrap/cache',
+]);
+
+set('shared_files', [
+    '.env',
+]);
+
+set('shared_dirs', [
+    'storage',
+]);
 
 // Hosts
 
@@ -20,12 +30,19 @@ host('100.30.196.101')
     ->set('deploy_path', '/var/www/Lost-Tapes');
 
 
-task('build', function () {
-    run('cd {{release_path}} && build');
-    });
+    task('reload:php-fpm', function () {
+        run('sudo /etc/init.d/php8.3-fpm restart');
+       });
+
+task('npm:build', function () {
+            run('cd /var/www/Lost-Tapes/current/public && npm install');
+            run('cd /var/www/Lost-Tapes/current/public && npm run build');
+       });
 // Hooks
 
-after('deploy:failed', 'deploy:unlock');
+after('deploy:vendors', 'npm:build');
+after('deploy', 'reload:php-fpm');
+
 
 before('deploy:symlink', 'artisan:migrate');
 

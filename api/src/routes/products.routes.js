@@ -1,21 +1,3 @@
-import { Router } from 'express';
-import { validationResult } from 'express-validator';
-import * as controller from '../controllers/products.controller.js';
-import { productCreateRules, productUpdateRules } from '../validation/products.rules.js';
-
-const router = Router();
-
-const validate = (rules) => [
-  ...rules,
-  (req, res, next) => {
-    const result = validationResult(req);
-    if (!result.isEmpty()) {
-      return res.status(422).json({ errors: result.array() });
-    }
-    next();
-  }
-];
-
 /**
  * @openapi
  * tags:
@@ -106,6 +88,23 @@ const validate = (rules) => [
  *       404:
  *         description: No trobat
  */
+import { Router } from 'express';
+import { validationResult } from 'express-validator';
+import * as controller from '../controllers/products.controller.js';
+import { productCreateRules, productUpdateRules } from '../validation/products.rules.js';
+
+const router = Router();
+
+const validate = (rules) => [
+  ...rules,
+  (req, res, next) => {
+    const result = validationResult(req);
+    if (!result.isEmpty()) {
+      return res.status(422).json({ errors: result.array() });
+    }
+    next();
+  }
+];
 
 router.get('/', controller.list);
 router.get('/:id', controller.getById);

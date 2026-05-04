@@ -29,7 +29,7 @@ export async function list(req, res, next) {
 export async function getById(req, res, next) {
     try {
       const product = await Product.findById(req.params.id)
-        .populate('categoryId', 'name')
+        // .populate('categoryId', 'name')
         .lean();
       if (!product) return res.status(404).json({ error: 'No trobat' });
       res.json(product);

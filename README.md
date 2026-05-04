@@ -6,7 +6,6 @@ Ahora en Sprint3(Laravel Breeze) usa autenticacion que queda dentro del framewor
 
 
 
-
 # API de Productes (Sprint 4)
 
 La SPA consumirà aquesta API per mostrar productes.
@@ -19,15 +18,6 @@ Rutes disponibles:
 
 - /admin/products → Ver productos
 - /products/import → Importar csv
-
-
-
-# Como arrancar el proyecto
-
-./vendor/bin/sail up -d
-
-npm run build(esto no lo se)
-
 
 
 
@@ -85,43 +75,27 @@ DB_USERNAME=sail
 DB_PASSWORD=password
 ```
 
-### 5. Crear la base de datos y ejecutar migraciones
+### 5. Crear la base de datos y ejecutar migraciones y datos
 ```bash
 php artisan migrate
-```
-
-Si el proyecto incluye datos de prueba:
-```bash
 php artisan db:seed
 ```
 
-### 6. Enlazar el storage
+### 6. Compilar los assets
 ```bash
-php artisan storage:link
+npm run dev # en api
+npm run build # si es en produccion
 ```
 
-### 7. Compilar los assets
+### 7. Arrancar proyecto
 ```bash
-npm run dev
-# o en producción:
-npm run build
+./vendor/bin/sail up -d
 ```
 
-### 8. Arrancar el servidor local
-```bash
-php artisan serve
-```
-
-La aplicación estará disponible en [http://localhost:8000](http://localhost:8000).
-
----
-
-## Comandos útiles
+## Comandos usados en el proceso
 
 | Comando | Descripción |
 |---|---|
 | `php artisan migrate:fresh --seed` | Resetea la BD y vuelve a poblarla |
 | `php artisan cache:clear` | Limpia la caché de la app |
 | `php artisan config:clear` | Limpia la caché de configuración |
-| `php artisan route:clear` | Limpia la caché de rutas |
-| `php artisan queue:work` | Arranca el worker de colas (si aplica) |
