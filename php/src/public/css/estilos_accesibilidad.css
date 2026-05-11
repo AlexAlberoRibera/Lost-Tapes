@@ -1,67 +1,39 @@
-#accesibilidad {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
+/* 1. Definición de colores (Variables) */
+:root {
+  --bg-principal: #ffffff;
+  --texto-principal: #111111;
+  --bg-tarjeta: #f9f9f9;
+  --bg-boton: #000000;
+  --texto-boton: #ffffff;
 }
 
-#accesibilidad button {
-  display: block;
-  margin-bottom: 5px;
-  padding: 8px 10px;
-  font-size: 1rem;
-}
-
-#menuAccesibilidad {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 5px;
-}
-
-#menuAccesibilidad[hidden] {
-  display: none;
-}
-
-
-#accesibilidad button:hover,
-#menuAccesibilidad button:hover {
-    background: #333;
-}
-
-button:focus {
-    outline: 3px solid rgb(0, 0, 0);
-}
-
-/* Tema oscuro */
+/* 2. Cuando se activa el tema oscuro, solo cambiamos los valores de las variables */
 body.tema-oscuro {
-    --site-bg: #111;
-    --text-color: #e8e8e8;
-    --muted-color: #999;
-    --header-bg: #111; /* fondo oscuro del header */
-    --header-text: #fff; /* letras blancas */
-    --footer-bg: #222;
-    background-color: var(--site-bg);
-    color: var(--text-color);
+  --bg-principal: #111111;
+  --texto-principal: #eeeeee;
+  --bg-tarjeta: #222222;
+  --bg-boton: #333333;
+  --texto-boton: #ffffff;
 }
 
-/* Header en tema oscuro */
-body.tema-oscuro .header {
-    background: var(--header-bg);
-    color: var(--header-text);
+/* 3. Aplicamos las variables a los elementos (esto sirve para todas las páginas) */
+body {
+  background-color: var(--bg-principal) !important;
+  color: var(--texto-principal) !important;
 }
 
-body.tema-oscuro .header a,
-body.tema-oscuro .header a.nav-link {
-    color: var(--header-text); /* enlaces blancos */
+.pelicula-card {
+  background-color: var(--bg-tarjeta) !important;
+  color: var(--texto-principal) !important;
 }
 
-/* Footer en tema oscuro */
-body.tema-oscuro .footer {
-    background: var(--footer-bg);
-    color: var(--text-color);
+/* Esto arregla de golpe todos los botones, incluyendo "Ver detalles" */
+.btn-dark, .btn, .like-btn, .comments-form button {
+  background-color: var(--bg-boton) !important;
+  color: var(--texto-boton) !important;
+  border: 1px solid #555;
 }
 
-body.tema-oscuro a {
-    color: var(--accent-color); /* links del resto de la página si tienes variable de acento */
-}
+/* Estilos fijos del botón ♿ (Igual que antes) */
+.accesibilidad { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
+#menuAccesibilidad[hidden] { display: none; }

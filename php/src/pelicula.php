@@ -8,29 +8,37 @@ $data = @file_get_contents(__DIR__ . '/public/data/peliculas.json');
 $parsed = $data ? json_decode($data, true) : null;
 $movie = null;
 if (isset($parsed['peliculas']) && is_array($parsed['peliculas'])) {
-    foreach ($parsed['peliculas'] as $p) {
-        if ((string)($p['id'] ?? '') === $id) { $movie = $p; break; }
+  foreach ($parsed['peliculas'] as $p) {
+    if ((string)($p['id'] ?? '') === $id) {
+      $movie = $p;
+      break;
     }
+  }
 }
 
 if (!$movie) {
-    http_response_code(404);
-    echo "<p>Película no encontrada.</p>";
-    exit;
+  http_response_code(404);
+  echo "<p>Película no encontrada.</p>";
+  exit;
 }
 
 // determine user (for header behavior like index.php)
 $user = null;
 $userId = null;
-if (!empty($_SESSION['user_id'])) { $userId = $_SESSION['user_id']; }
-elseif (!empty($_COOKIE['user_id'])) { $userId = $_COOKIE['user_id']; $_SESSION['user_id']=$userId; }
+if (!empty($_SESSION['user_id'])) {
+  $userId = $_SESSION['user_id'];
+} elseif (!empty($_COOKIE['user_id'])) {
+  $userId = $_COOKIE['user_id'];
+  $_SESSION['user_id'] = $userId;
+}
 if ($userId !== null) {
-    $u = read_user($userId);
-    if ($u !== false) $user = is_array($u) && isset($u[0]) ? $u[0] : $u;
+  $u = read_user($userId);
+  if ($u !== false) $user = is_array($u) && isset($u[0]) ? $u[0] : $u;
 }
 ?>
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -41,9 +49,12 @@ if ($userId !== null) {
   <link rel="stylesheet" href="./public/css/session.css">
   <link rel="stylesheet" href="./public/css/comments.css">
   <link rel="stylesheet" href="./public/css/estilo_footer.css">
+  <link rel="stylesheet" href="./public/css/estilos_accesibilidad.css">
 </head>
+
 <body>
-<?php $show_search = false; include __DIR__ . '/includes/header.php'; ?>
+  <?php $show_search = false;
+  include __DIR__ . '/includes/header.php'; ?>
 
   <main style="padding-top:120px; max-width:1000px; margin:24px auto;">
     <article class="movie-detail">
@@ -51,17 +62,17 @@ if ($userId !== null) {
       <div style="display:flex; gap:18px; align-items:flex-start;">
         <div style="flex:0 0 420px;">
           <?php
-            // Determinar ruta de imagen para la película (soporta 'imagen' o 'carpeta')
-            if (!empty($movie['imagen'])) {
-              $img = $movie['imagen'];
-            } elseif (!empty($movie['carpeta'])) {
-              $img = $movie['carpeta'] . '1.jpg';
-            } else {
-              $img = './public/img/peliculas/default.jpg';
-            }
-            // Normalizar y limpiar ruta
-            $img = str_replace('./', '', $img);
-            $img = preg_replace('#/+#', '/', $img);
+          // Determinar ruta de imagen para la película (soporta 'imagen' o 'carpeta')
+          if (!empty($movie['imagen'])) {
+            $img = $movie['imagen'];
+          } elseif (!empty($movie['carpeta'])) {
+            $img = $movie['carpeta'] . '1.jpg';
+          } else {
+            $img = './public/img/peliculas/default.jpg';
+          }
+          // Normalizar y limpiar ruta
+          $img = str_replace('./', '', $img);
+          $img = preg_replace('#/+#', '/', $img);
           ?>
           <img src="/<?php echo htmlspecialchars($img, ENT_QUOTES); ?>" alt="<?php echo htmlspecialchars($movie['nombre'], ENT_QUOTES); ?>" style="width:100%; border-radius:8px;">
         </div>
@@ -92,8 +103,13 @@ if ($userId !== null) {
 
   <?php include __DIR__ . '/includes/footer.php'; ?>
 
+  <?php include __DIR__ . '/includes/accesibilidad.php'; ?>
+
+  <script src="./js/accesibilidad.js"></script>
+
   <script src="./js/main.js"></script>
   <script src="./js/comments.js"></script>
   <script src="./js/ratings.js"></script>
 </body>
+
 </html>

@@ -19,14 +19,14 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   color: #ffffff;
   z-index: 1000;
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header a {
@@ -68,7 +68,7 @@ body {
 
 .pelicula-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .pelicula-card img {
@@ -101,7 +101,7 @@ body {
 .video-section .ratio {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* ============================= */
@@ -132,7 +132,7 @@ body {
 }
 
 button:focus {
-  outline: 3px solid rgb(0,0,0);
+  outline: 3px solid rgb(0, 0, 0);
 }
 
 /* ============================= */
@@ -152,19 +152,45 @@ body.tema-oscuro .header a,
 body.tema-oscuro .header .nav-link,
 body.tema-oscuro .header .navbar-brand,
 body.tema-oscuro .header button {
-  color: #fff ;
-  border-color: #fff ;
+  color: #fff;
+  border-color: #fff;
 }
+
 h2.tema-oscuro,
 body.tema-oscuro .section-title {
-  color: #e8e8e8 ;
+  color: #e8e8e8;
 }
 
 body.tema-oscuro .header a:hover,
 body.tema-oscuro .header .nav-link:hover,
 body.tema-oscuro .header .navbar-brand:hover,
 body.tema-oscuro .header button:hover {
-  color: #ff6600 ;
-  border-color: #ff6600 ;
+  color: #ff6600;
+  border-color: #ff6600;
 }
 
+/* Fuerza el color del texto en los botones cuando el modo oscuro está activo */
+body.tema-oscuro .btn-dark,
+body.tema-oscuro .btn {
+  color: #ffffff !important;
+  background-color: #333 !important;
+  border-color: #444;
+}
+
+body.tema-oscuro .btn-dark:hover {
+  background-color: #ff6600 !important;
+  color: #000000 !important;
+}
+
+/* Ajuste específico para las tarjetas de películas en modo oscuro */
+body.tema-oscuro .pelicula-card {
+  background-color: #222;
+  color: #fff;
+  border-color: #444;
+}
+
+body.tema-oscuro .pelicula-card .card-title,
+body.tema-oscuro .pelicula-card .card-text,
+body.tema-oscuro .pelicula-card .duracion {
+  color: #eee !important;
+}

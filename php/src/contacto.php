@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="./public/css/estilos.css">
   <link rel="stylesheet" href="./public/css/estilo_Contacto.css" />
   <link rel="stylesheet" href="./public/css/estilo_footer.css">
+  <link rel="stylesheet" href="./public/css/estilos_accesibilidad.css">
 
 </head>
 <body>
@@ -97,6 +98,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php include __DIR__ . '/includes/footer.php'; ?>
     <script src="./js/validacion.js"></script>
+    
+    <?php include __DIR__ . '/includes/accesibilidad.php'; ?>
 
+    <script src="./js/accesibilidad.js"></script>
 </body>
 </html>

@@ -31,6 +31,7 @@ if ($userId !== null) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS propio -->
+     <link rel="stylesheet" href="./public/css/estilos_accesibilidad.css">
     <link rel="stylesheet" href="./public/css/estilos.css">
     <link rel="stylesheet" href="./public/css/estilo_footer.css">
     <link rel="stylesheet" href="./public/css/estilos_peliculas.css">

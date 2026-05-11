@@ -9,7 +9,7 @@
     <div class="footer-links">
       <h4>Explorar</h4>
       <a href="index.php">Home</a>
-      <a href="#">Productos</a>
+      <a href="productos.php">Productos</a>
       <a href="contacto.php">Contacto</a>
       <a href="#">Vender</a>
     </div>
