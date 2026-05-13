@@ -2,67 +2,213 @@
     "peliculas": [
         {
             "id": "1",
-            "nombre": "Harakiri",
-            "descripcion": "Un poderoso drama samurái que desmonta el código del honor a través de una historia contundente y humana. Una crítica feroz a la hipocresía del sistema feudal japonés.",
-            "duracion": "127",
-            "carpeta": ".\/public\/img\/peliculas\/harakiri\/"
+            "nombre": "Andrei Rublev",
+            "descripcion": "Obra maestra de Tarkovsky. Incluye comentario del director y libreto de 40 páginas sobre la iconografía medieval.",
+            "duracion": "205",
+            "carpeta": ".\/public\/img\/peliculas\/andreiRublev\/"
         },
         {
             "id": "2",
-            "nombre": "Branded To Kill",
-            "descripcion": "Un thriller delirante y estilizado sobre un asesino obsesionado con el olor del arroz hervido. Una explosión del cine experimental japonés de los 60.",
-            "duracion": "92",
+            "nombre": "Marcado para matar",
+            "descripcion": "Yakuza surrealista de Seijun Suzuki. Con entrevista exclusiva al director sobre su despido de Nikkatsu.",
+            "duracion": "91",
             "carpeta": ".\/public\/img\/peliculas\/brandedToKill\/"
         },
         {
             "id": "3",
-            "nombre": "Andrei Rublev",
-            "descripcion": "Tarkovski retrata el viaje espiritual de un pintor medieval en una Rusia convulsa. Cine monumental sobre la fe, el arte y la condición humana.",
-            "duracion": "205",
-            "carpeta": ".\/public\/img\/peliculas\/andreiRublev\/"
+            "nombre": "Harakiri",
+            "descripcion": "Obra cumbre de Kobayashi. Incluye documental sobre el cine samurái y entrevista con Tatsuya Nakadai.",
+            "duracion": "127",
+            "carpeta": ".\/public\/img\/peliculas\/harakiri\/"
+        },
+        {
+            "id": "4",
+            "nombre": "Cuentos de la luna pálida",
+            "descripcion": "Fantasía de Kenji Mizoguchi. Con análisis de la fotografía de Kazuo Miyagawa y ensayo sobre el cine de fantasmas japonés.",
+            "duracion": "96",
+            "imagen": ".\/public\/img\/ugetsu.jpg"
+        },
+        {
+            "id": "5",
+            "nombre": "El intendente Sansho",
+            "descripcion": "Drama de Mizoguchi. Incluye comentario del crítico Tony Rayns y libreto sobre el humanismo en el cine japonés.",
+            "duracion": "124",
+            "imagen": ".\/public\/img\/sansho.jpg"
+        },
+        {
+            "id": "6",
+            "nombre": "El carterista",
+            "descripcion": "Obra maestra de Robert Bresson. Con entrevista al director sobre su teoría del cinematógrafo y modelos no-actores.",
+            "duracion": "75",
+            "imagen": ".\/public\/img\/pickpocket.jpg"
+        },
+        {
+            "id": "7",
+            "nombre": "Al azar de Baltasar",
+            "descripcion": "Bresson en estado puro. Incluye documental sobre la filmografía del director y ensayo de Paul Schrader.",
+            "duracion": "95",
+            "imagen": ".\/public\/img\/balthazar.jpg"
+        },
+        {
+            "id": "8",
+            "nombre": "Un condenado a muerte se ha escapado",
+            "descripcion": "Suspense minimalista de Bresson. Con comentario de audio del estudioso de cine James Quandt.",
+            "duracion": "99",
+            "imagen": ".\/public\/img\/manEscaped.jpg"
+        },
+        {
+            "id": "9",
+            "nombre": "Stalker",
+            "descripcion": "Ciencia ficción metafísica de Tarkovsky. Con making-of sobre las difíciles condiciones de rodaje y entrevista a Alexander Kaidanovsky.",
+            "duracion": "161",
+            "imagen": ".\/public\/img\/stalker.jpg"
+        },
+        {
+            "id": "10",
+            "nombre": "El espejo",
+            "descripcion": "Poema cinematográfico de Tarkovsky. Incluye análisis de la estructura no-lineal y entrevista al cinematógrafo Georgy Rerberg.",
+            "duracion": "108",
+            "imagen": ".\/public\/img\/mirror.jpg"
+        },
+        {
+            "id": "11",
+            "nombre": "Solaris",
+            "descripcion": "Respuesta de Tarkovsky a 2001. Con documental sobre la adaptación de Stanisław Lem y efectos especiales de la época soviética.",
+            "duracion": "167",
+            "imagen": ".\/public\/img\/solaris.jpg"
+        },
+        {
+            "id": "12",
+            "nombre": "Persona",
+            "descripcion": "Obra maestra psicológica de Bergman. Con entrevista a Liv Ullmann y Bibi Andersson sobre la intensidad del rodaje.",
+            "duracion": "83",
+            "imagen": ".\/public\/img\/persona.jpg"
+        },
+        {
+            "id": "13",
+            "nombre": "El séptimo sello",
+            "descripcion": "Alegoría medieval de Bergman. Incluye comentario del director y documental sobre el simbolismo de la muerte.",
+            "duracion": "96",
+            "imagen": ".\/public\/img\/seventhSeal.jpg"
+        },
+        {
+            "id": "14",
+            "nombre": "Fresas salvajes",
+            "descripcion": "Drama existencial de Bergman. Con entrevista a Max von Sydow y ensayo sobre el viaje como metáfora.",
+            "duracion": "91",
+            "imagen": ".\/public\/img\/wildStrawberries.jpg"
+        },
+        {
+            "id": "15",
+            "nombre": "Gritos y susurros",
+            "descripcion": "Intimismo de Bergman. Incluye análisis del uso del color rojo y entrevista al cinematógrafo Sven Nykvist.",
+            "duracion": "91",
+            "imagen": ".\/public\/img\/criesWhispers.jpg"
+        },
+        {
+            "id": "16",
+            "nombre": "Dios y el diablo en la tierra del sol",
+            "descripcion": "Manifiesto del Cinema Novo de Glauber Rocha. Con entrevista al director sobre el tercer cine y la estética del hambre.",
+            "duracion": "120",
+            "imagen": ".\/public\/img\/blackGodWhiteDevil.jpg"
+        },
+        {
+            "id": "17",
+            "nombre": "Antonio das Mortes",
+            "descripcion": "Western místico de Glauber Rocha. Incluye documental sobre el movimiento Cinema Novo brasileño.",
+            "duracion": "100",
+            "imagen": ".\/public\/img\/antonioDasMortes.jpg"
+        },
+        {
+            "id": "18",
+            "nombre": "Tierra en trance",
+            "descripcion": "Alegoría política de Glauber Rocha. Con análisis del contexto de la dictadura brasileña y soundtrack completo.",
+            "duracion": "106",
+            "imagen": ".\/public\/img\/entrancedEarth.jpg"
+        },
+        {
+            "id": "19",
+            "nombre": "La aventura",
+            "descripcion": "Antonioni redefine el tiempo cinematográfico. Con comentario de críticos y entrevista a Monica Vitti sobre el silencio en pantalla.",
+            "duracion": "143",
+            "imagen": ".\/public\/img\/avventura.jpg"
+        },
+        {
+            "id": "20",
+            "nombre": "La noche",
+            "descripcion": "Trilogía de la incomunicación de Antonioni. Incluye galería fotográfica de Gianni Di Venanzo y ensayo sobre el vacío existencial.",
+            "duracion": "122",
+            "imagen": ".\/public\/img\/laNotte.jpg"
+        },
+        {
+            "id": "21",
+            "nombre": "Ocho y medio",
+            "descripcion": "Autorretrato de Fellini. Con making-of narrado por Marcello Mastroianni y análisis de los sueños cinematográficos.",
+            "duracion": "138",
+            "imagen": ".\/public\/img\/otto.jpg"
+        },
+        {
+            "id": "22",
+            "nombre": "Cuentos de Tokio",
+            "descripcion": "Obra maestra de Ozu. Incluye documental sobre los pillow shots y entrevista al actor Chishū Ryū sobre trabajar con Ozu.",
+            "duracion": "136",
+            "imagen": ".\/public\/img\/tokyoStory.jpg"
+        },
+        {
+            "id": "23",
+            "nombre": "Primavera tardía",
+            "descripcion": "Melancolía de Ozu. Con comentario del especialista David Bordwell y análisis de la composición tatami-shot.",
+            "duracion": "108",
+            "imagen": ".\/public\/img\/lateSpring.jpg"
+        },
+        {
+            "id": "24",
+            "nombre": "La condición humana",
+            "descripcion": "Épica humanista de Kobayashi (trilogía completa). Con entrevista a Tatsuya Nakadai y libreto de 60 páginas sobre el pacifismo japonés.",
+            "duracion": "579",
+            "imagen": ".\/public\/img\/humanCondition.jpg"
+        },
+        {
+            "id": "25",
+            "nombre": "Kwaidan",
+            "descripcion": "Antología de fantasmas de Kobayashi. Incluye documental sobre los sets pintados a mano y entrevista al compositor Tōru Takemitsu.",
+            "duracion": "161",
+            "imagen": ".\/public\/img\/kwaidan.jpg"
+        },
+        {
+            "id": "26",
+            "nombre": "Mouchette",
+            "descripcion": "Drama brutal de Bresson. Con análisis de la interpretación no-profesional y ensayo sobre la crueldad humana.",
+            "duracion": "78",
+            "imagen": ".\/public\/img\/mouchette.jpg"
+        },
+        {
+            "id": "27",
+            "nombre": "El acorazado Potemkin",
+            "descripcion": "Revolución del montaje de Eisenstein. Con comentario sobre la escalera de Odessa y restauración digital del tintado original.",
+            "duracion": "75",
+            "imagen": ".\/public\/img\/potemkin.jpg"
+        },
+        {
+            "id": "28",
+            "nombre": "Iván el Terrible",
+            "descripcion": "Opera visual de Eisenstein (Parte I y II). Incluye análisis del uso del color en Parte II y score completo de Prokofiev.",
+            "duracion": "187",
+            "imagen": ".\/public\/img\/ivanTerrible.jpg"
+        },
+        {
+            "id": "29",
+            "nombre": "Aguirre, la cólera de Dios",
+            "descripcion": "Locura en el Amazonas de Herzog. Con diario de rodaje del director y entrevista a Klaus Kinski sobre su relación tóxica en el set.",
+            "duracion": "93",
+            "imagen": ".\/public\/img\/aguirre.jpg"
+        },
+        {
+            "id": "30",
+            "nombre": "La pasión de Juana de Arco",
+            "descripcion": "Obra maestra silente de Dreyer. Restauración completa con partitura de Richard Einhorn y ensayo sobre los close-ups de Falconetti.",
+            "duracion": "110",
+            "imagen": ".\/public\/img\/joanArc.jpg"
         }
-            ,
-            {
-                "id": "4",
-                "nombre": "Dictador (single image)",
-                "descripcion": "Objeto encontrado: imagen promocional etiquetada como 'Dictador'.",
-                "duracion": "—",
-                "imagen": ".\/public\/img\/Dictador.jpg"
-            },
-            {
-                "id": "5",
-                "nombre": "Looney Tunes (remix)",
-                "descripcion": "Archivado: arte gráfico con estética ochentera.",
-                "duracion": "—",
-                "imagen": ".\/public\/img\/Looney_Tunes.png"
-            },
-            {
-                "id": "6",
-                "nombre": "Woppenheimer",
-                "descripcion": "Fragmento sonoro / póster encontrado en cinta analógica.",
-                "duracion": "—",
-                "imagen": ".\/public\/img\/Woppenheimer.png"
-            },
-            {
-                "id": "7",
-                "nombre": "Trap Story",
-                "descripcion": "Muestra de música y arte visual asociada al underground.",
-                "duracion": "—",
-                "imagen": ".\/public\/img\/Trap_Story.png"
-            },
-            {
-                "id": "8",
-                "nombre": "Kigbutter",
-                "descripcion": "Imagen de archivo sin metadatos completos.",
-                "duracion": "—",
-                "imagen": ".\/public\/img\/kigbutter.png"
-            },
-            {
-                "id": "9",
-                "nombre": "Ladrón",
-                "descripcion": "Fotografía encontrada en cinta rota.",
-                "duracion": "—",
-                "imagen": ".\/public\/img\/ladron.png"
-            }
     ]
 }
