@@ -185,7 +185,7 @@ class ProductSeeder extends Seeder
             'description' => 'Alegoría política de Glauber Rocha. Con análisis del contexto de la dictadura brasileña y soundtrack completo.',
             'price' => 20.50,
             'stock' => 10,
-            'image' => 'entrancedEarth.jpg ',
+            'image' => 'entrancedEarth.jpg',
             'category' => 'pelicula',
         ]);
 
@@ -195,7 +195,7 @@ class ProductSeeder extends Seeder
             'description' => 'Antonioni redefine el tiempo cinematográfico. Con comentario de críticos y entrevista a Monica Vitti sobre el silencio en pantalla.',
             'price' => 21.99,
             'stock' => 27,
-            'image' => 'avventura.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -205,7 +205,7 @@ class ProductSeeder extends Seeder
             'description' => 'Trilogía de la incomunicación de Antonioni. Incluye galería fotográfica de Gianni Di Venanzo y ensayo sobre el vacío existencial.',
             'price' => 20.99,
             'stock' => 23,
-            'image' => 'laNotte.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -215,7 +215,7 @@ class ProductSeeder extends Seeder
             'description' => 'Autorretrato de Fellini. Con making-of narrado por Marcello Mastroianni y análisis de los sueños cinematográficos.',
             'price' => 23.99,
             'stock' => 42,
-            'image' => 'otto.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -225,7 +225,7 @@ class ProductSeeder extends Seeder
             'description' => 'Obra maestra de Ozu. Incluye documental sobre los pillow shots y entrevista al actor Chishū Ryū sobre trabajar con Ozu.',
             'price' => 19.99,
             'stock' => 35,
-            'image' => 'tokyoStory.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -235,7 +235,7 @@ class ProductSeeder extends Seeder
             'description' => 'Melancolía de Ozu. Con comentario del especialista David Bordwell y análisis de la composición tatami-shot.',
             'price' => 18.50,
             'stock' => 29,
-            'image' => 'lateSpring.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -245,7 +245,7 @@ class ProductSeeder extends Seeder
             'description' => 'Épica humanista de Kobayashi (trilogía completa). Con entrevista a Tatsuya Nakadai y libreto de 60 páginas sobre el pacifismo japonés.',
             'price' => 39.99,
             'stock' => 8,
-            'image' => 'humanCondition.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -255,7 +255,7 @@ class ProductSeeder extends Seeder
             'description' => 'Antología de fantasmas de Kobayashi. Incluye documental sobre los sets pintados a mano y entrevista al compositor Tōru Takemitsu.',
             'price' => 24.99,
             'stock' => 16,
-            'image' => 'kwaidan.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -265,7 +265,7 @@ class ProductSeeder extends Seeder
             'description' => 'Drama brutal de Bresson. Con análisis de la interpretación no-profesional y ensayo sobre la crueldad humana.',
             'price' => 17.99,
             'stock' => 21,
-            'image' => 'mouchette.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -275,7 +275,7 @@ class ProductSeeder extends Seeder
             'description' => 'Revolución del montaje de Eisenstein. Con comentario sobre la escalera de Odessa y restauración digital del tintado original.',
             'price' => 16.99,
             'stock' => 33,
-            'image' => 'potemkin.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -285,7 +285,7 @@ class ProductSeeder extends Seeder
             'description' => 'Opera visual de Eisenstein (Parte I y II). Incluye análisis del uso del color en Parte II y score completo de Prokofiev.',
             'price' => 28.99,
             'stock' => 14,
-            'image' => 'ivanTerrible.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -295,7 +295,7 @@ class ProductSeeder extends Seeder
             'description' => 'Locura en el Amazonas de Herzog. Con diario de rodaje del director y entrevista a Klaus Kinski sobre su relación tóxica en el set.',
             'price' => 20.99,
             'stock' => 31,
-            'image' => 'aguirre.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
 
@@ -305,7 +305,7 @@ class ProductSeeder extends Seeder
             'description' => 'Obra maestra silente de Dreyer. Restauración completa con partitura de Richard Einhorn y ensayo sobre los close-ups de Falconetti.',
             'price' => 22.99,
             'stock' => 26,
-            'image' => 'joanArc.jpg',
+            'image' => null,
             'category' => 'pelicula',
         ]);
     }

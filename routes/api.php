@@ -2,17 +2,20 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Product;
 use App\Http\Controllers\ProductController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::apiResource('products', ProductController::class); //la actividad solo pide estos
+// Lectura pública
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/{product}', [ProductController::class, 'show']);
 
-Route::get('/products', function () {
-    return response()->json(Product::all());
+// Escritura protegida por Sanctum
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/products', [ProductController::class, 'store']);
+    Route::put('/products/{product}', [ProductController::class, 'update']);
+    Route::patch('/products/{product}', [ProductController::class, 'update']);
+    Route::delete('/products/{product}', [ProductController::class, 'destroy']);
 });
-
-

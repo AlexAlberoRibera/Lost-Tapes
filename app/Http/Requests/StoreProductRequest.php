@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProductRequest extends FormRequest
+class StoreProductRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -13,16 +13,14 @@ class UpdateProductRequest extends FormRequest
 
     public function rules(): array
     {
-        $productId = $this->route('product')?->id;
-
         return [
-            'sku'         => 'sometimes|required|string|max:50|unique:products,sku,' . $productId,
-            'name'        => 'sometimes|required|string|max:255',
-            'description' => 'sometimes|nullable|string',
-            'price'       => 'sometimes|required|numeric|min:0',
-            'stock'       => 'sometimes|required|integer|min:0',
-            'image'       => 'sometimes|nullable|string|max:255',
-            'category'    => 'sometimes|required|string|max:100',
+            'sku'         => 'required|string|max:50|unique:products,sku',
+            'name'        => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'price'       => 'required|numeric|min:0',
+            'stock'       => 'required|integer|min:0',
+            'image'       => 'nullable|string|max:255',
+            'category'    => 'required|string|max:100',
         ];
     }
 

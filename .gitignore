@@ -1,5 +1,14 @@
 *.log
 .DS_Store
+/storage/framework/cache/data/*
+/storage/framework/cache/laravel-excel/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+!/storage/framework/cache/data/.gitkeep
+!/storage/framework/sessions/.gitkeep
+!/storage/framework/testing/.gitkeep
+!/storage/framework/views/.gitkeep
 .env
 .env.backup
 .env.production

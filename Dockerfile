@@ -1,12 +1,19 @@
-FROM node:20
+FROM php:8.2-fpm
 
-WORKDIR /app
+RUN apt-get update && apt-get install -y \
+    git curl zip unzip libpng-dev libonig-dev libxml2-dev \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY package*.json ./
-RUN npm install
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www
 
 COPY . .
 
-EXPOSE 3000
+RUN composer install --no-dev --optimize-autoloader \
+    && chmod -R 775 storage bootstrap/cache \
+    && chown -R www-data:www-data storage bootstrap/cache
 
-CMD ["npm", "run", "dev"]
+EXPOSE 9000
+CMD ["php-fpm"]
