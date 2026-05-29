@@ -35,17 +35,17 @@ use App\Models\Product;
 class ProductsImport implements ToModel, WithHeadingRow
 {
     public function model(array $row)
-    {
-        return Product::updateOrCreate(
-            ['sku' => $row['sku']],
-            [
-                'name' => $row['name'],
-                'description' => $row['description'] ?? null,
-                'price' => (float) str_replace(',', '.', $row['price']),
-                'stock' => (int) $row['stock'],
-                'image' => $row['image'] ?? null,
-                'category' => $row['category'] ?? null,
-            ]
-        );
-    }
+{
+    return Product::updateOrCreate(
+        ['sku' => $row['sku']], // clave única
+        [
+            'name' => $row['name'],
+            'description' => $row['description'] ?? null,
+            'price' => (float) str_replace(',', '.', $row['price']),
+            'stock' => (int) $row['stock'],
+            'image' => $row['image'] ?? null,
+            'category' => $row['category'] ?? null,
+        ]
+    );
+}
 }

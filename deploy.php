@@ -24,7 +24,7 @@ set('shared_dirs', [
 
 // Hosts
 
-host('100.30.196.101')
+host('44.193.254.173')  //ip de la maquina
     ->set('remote_user', 'deploy')
     //->set('identity_file’, ‘~/.ssh/id_rsa')
     ->set('deploy_path', '/var/www/Lost-Tapes');
@@ -35,8 +35,9 @@ host('100.30.196.101')
        });
 
 task('npm:build', function () {
-            run('cd /var/www/Lost-Tapes/current/public && npm install');
-            run('cd /var/www/Lost-Tapes/current/public && npm run build');
+            run('cd {{release_path}} && npm ci');
+            run('cd {{release_path}} && npm run build');
+            //run('cd /var/www/Lost-Tapes/current/api && npm run dev');
        });
 // Hooks
 

@@ -185,7 +185,7 @@ class ProductSeeder extends Seeder
             'description' => 'Alegoría política de Glauber Rocha. Con análisis del contexto de la dictadura brasileña y soundtrack completo.',
             'price' => 20.50,
             'stock' => 10,
-            'image' => 'entrancedEarth.jpg',
+            'image' => 'entrancedEarth.jpg ',
             'category' => 'pelicula',
         ]);
 
