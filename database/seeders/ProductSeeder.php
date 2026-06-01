@@ -17,6 +17,7 @@ class ProductSeeder extends Seeder
             'stock' => 50,
             'image' => 'andreiRublev.jpg',
             'category' => 'pelicula',
+            'duration' => '205 min',
         ]);
 
         Product::create([
@@ -27,6 +28,7 @@ class ProductSeeder extends Seeder
             'stock' => 20,
             'image' => 'brandedToKill.jpg',
             'category' => 'pelicula',
+            'duration' => '91 min',
         ]);
 
         Product::create([
@@ -37,6 +39,7 @@ class ProductSeeder extends Seeder
             'stock' => 15,
             'image' => 'harakiri.jpg',
             'category' => 'pelicula',
+            'duration' => '133 min',
         ]);
 
         Product::create([
@@ -47,6 +50,7 @@ class ProductSeeder extends Seeder
             'stock' => 25,
             'image' => 'ugetsu.jpg',
             'category' => 'pelicula',
+            'duration' => '94 min',
         ]);
 
         Product::create([
@@ -57,6 +61,7 @@ class ProductSeeder extends Seeder
             'stock' => 18,
             'image' => 'sansho.jpg',
             'category' => 'pelicula',
+            'duration' => '124 min',
         ]);
 
         Product::create([
@@ -67,6 +72,7 @@ class ProductSeeder extends Seeder
             'stock' => 30,
             'image' => 'pickpocket.jpg',
             'category' => 'pelicula',
+            'duration' => '75 min',
         ]);
 
         Product::create([
@@ -77,6 +83,7 @@ class ProductSeeder extends Seeder
             'stock' => 22,
             'image' => 'balthazar.jpg',
             'category' => 'pelicula',
+            'duration' => '95 min',
         ]);
 
         Product::create([
@@ -87,6 +94,7 @@ class ProductSeeder extends Seeder
             'stock' => 28,
             'image' => 'manEscaped.jpg',
             'category' => 'pelicula',
+            'duration' => '99 min',
         ]);
 
         Product::create([
@@ -97,6 +105,7 @@ class ProductSeeder extends Seeder
             'stock' => 35,
             'image' => 'stalker.jpg',
             'category' => 'pelicula',
+            'duration' => '162 min',
         ]);
 
         Product::create([
@@ -107,6 +116,7 @@ class ProductSeeder extends Seeder
             'stock' => 40,
             'image' => 'mirror.jpg',
             'category' => 'pelicula',
+            'duration' => '108 min',
         ]);
 
         Product::create([
@@ -117,6 +127,7 @@ class ProductSeeder extends Seeder
             'stock' => 45,
             'image' => 'solaris.jpg',
             'category' => 'pelicula',
+            'duration' => '167 min',
         ]);
 
         Product::create([
@@ -127,6 +138,7 @@ class ProductSeeder extends Seeder
             'stock' => 38,
             'image' => 'persona.jpg',
             'category' => 'pelicula',
+            'duration' => '83 min',
         ]);
 
         Product::create([
@@ -137,6 +149,7 @@ class ProductSeeder extends Seeder
             'stock' => 50,
             'image' => 'seventhSeal.jpg',
             'category' => 'pelicula',
+            'duration' => '96 min',
         ]);
 
         Product::create([
@@ -147,6 +160,7 @@ class ProductSeeder extends Seeder
             'stock' => 32,
             'image' => 'wildStrawberries.jpg',
             'category' => 'pelicula',
+            'duration' => '91 min',
         ]);
 
         Product::create([
@@ -157,6 +171,7 @@ class ProductSeeder extends Seeder
             'stock' => 24,
             'image' => 'criesWhispers.jpg',
             'category' => 'pelicula',
+            'duration' => '91 min',
         ]);
 
         Product::create([
@@ -167,6 +182,7 @@ class ProductSeeder extends Seeder
             'stock' => 15,
             'image' => 'blackGodWhiteDevil.jpg',
             'category' => 'pelicula',
+            'duration' => '120 min',
         ]);
 
         Product::create([
@@ -177,6 +193,7 @@ class ProductSeeder extends Seeder
             'stock' => 12,
             'image' => 'antonioDasMortes.jpg',
             'category' => 'pelicula',
+            'duration' => '100 min',
         ]);
 
         Product::create([
@@ -187,6 +204,7 @@ class ProductSeeder extends Seeder
             'stock' => 10,
             'image' => 'entrancedEarth.jpg',
             'category' => 'pelicula',
+            'duration' => '107 min',
         ]);
 
         Product::create([
@@ -197,6 +215,7 @@ class ProductSeeder extends Seeder
             'stock' => 27,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '143 min',
         ]);
 
         Product::create([
@@ -207,6 +226,7 @@ class ProductSeeder extends Seeder
             'stock' => 23,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '122 min',
         ]);
 
         Product::create([
@@ -217,6 +237,7 @@ class ProductSeeder extends Seeder
             'stock' => 42,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '138 min',
         ]);
 
         Product::create([
@@ -227,6 +248,7 @@ class ProductSeeder extends Seeder
             'stock' => 35,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '136 min',
         ]);
 
         Product::create([
@@ -237,6 +259,7 @@ class ProductSeeder extends Seeder
             'stock' => 29,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '108 min',
         ]);
 
         Product::create([
@@ -247,6 +270,7 @@ class ProductSeeder extends Seeder
             'stock' => 8,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '579 min (trilogía)',
         ]);
 
         Product::create([
@@ -257,6 +281,7 @@ class ProductSeeder extends Seeder
             'stock' => 16,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '183 min',
         ]);
 
         Product::create([
@@ -267,6 +292,7 @@ class ProductSeeder extends Seeder
             'stock' => 21,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '78 min',
         ]);
 
         Product::create([
@@ -277,6 +303,7 @@ class ProductSeeder extends Seeder
             'stock' => 33,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '75 min',
         ]);
 
         Product::create([
@@ -287,6 +314,7 @@ class ProductSeeder extends Seeder
             'stock' => 14,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '187 min (I + II)',
         ]);
 
         Product::create([
@@ -297,6 +325,7 @@ class ProductSeeder extends Seeder
             'stock' => 31,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '93 min',
         ]);
 
         Product::create([
@@ -307,6 +336,7 @@ class ProductSeeder extends Seeder
             'stock' => 26,
             'image' => null,
             'category' => 'pelicula',
+            'duration' => '82 min',
         ]);
     }
 }

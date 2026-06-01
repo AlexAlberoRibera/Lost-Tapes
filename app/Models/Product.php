@@ -17,5 +17,6 @@ class Product extends Model
         'stock',
         'image',
         'category',
+        'duration',
     ];
 }
