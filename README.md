@@ -23,7 +23,7 @@ Rutes disponibles:
 
 # Lost Tapes - BackEnd(Laravel)
 
-Breve descripción de qué hace la aplicación.
+La pagina web para los amantes de lo antiguo
 
 ---
 
