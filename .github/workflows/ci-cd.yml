@@ -70,5 +70,6 @@ jobs:
             git reset --hard origin/rama-sprint5 &&
             sudo env COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --ignore-platform-reqs &&
             php artisan migrate --force &&
+            php artisan l5-swagger:generate &&
             sudo systemctl restart php8.5-fpm
           '

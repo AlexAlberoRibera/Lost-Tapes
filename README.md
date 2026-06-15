@@ -142,13 +142,31 @@ sku,name,description,price,stock,image,category
 
 ## Documentación Swagger
 
-La documentación interactiva de la API está disponible en:
+La documentación interactiva (Swagger UI) está disponible en:
 
 ```
-http://localhost:8000/api/documentation
+http://localhost:8000/api/documentation   # local
+http://api.projecte12.ddaw.es/api/documentation   # producción
 ```
 
-Generada automáticamente con L5-Swagger a partir de anotaciones en los controladores. Permite consultar y probar todos los endpoints sin necesidad de un cliente externo.
+El JSON OpenAPI en bruto se sirve en `/docs`.
+
+Generada con [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger) a partir de atributos `#[OA\...]` de PHP en:
+
+- `app/Http/Controllers/Controller.php` — `@OA\Info` y el esquema de seguridad `bearerAuth`
+- `app/Http/Controllers/AuthController.php` — `/api/login`, `/api/logout`, `/api/user`
+- `app/Http/Controllers/ProductController.php` — `/api/products` y `/api/products/{product}`
+- `app/Models/User.php` y `app/Http/Resources/ProductResource.php` — esquemas `User` y `Product`
+
+Para probar los endpoints protegidos desde Swagger UI: haz login en `/api/login`, copia el `token` de la respuesta y pégalo en el botón **Authorize** (formato `Bearer <token>`).
+
+Para regenerar la documentación tras añadir o modificar anotaciones:
+
+```bash
+php artisan l5-swagger:generate
+```
+
+El pipeline de CI/CD la regenera automáticamente en cada despliegue.
 
 ---
 
