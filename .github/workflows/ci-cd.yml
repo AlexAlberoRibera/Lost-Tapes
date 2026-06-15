@@ -1,0 +1,64 @@
+name: CI/CD Backend
+
+on:
+  push:
+    branches: [rama-sprint5]
+
+jobs:
+  test:
+    name: Instalar dependencias y ejecutar tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Instalar dependencias de Composer
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Preparar entorno de test
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Ejecutar tests
+        run: php artisan test
+
+  deploy:
+    name: Desplegar y migrar
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configurar acceso SSH (vía Edge)
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat >> ~/.ssh/config <<EOF
+          Host edge
+            HostName ${{ secrets.EDGE_HOST }}
+            User ubuntu
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking no
+
+          Host backend
+            HostName ${{ secrets.BACKEND_HOST }}
+            User ubuntu
+            IdentityFile ~/.ssh/deploy_key
+            ProxyJump edge
+            StrictHostKeyChecking no
+          EOF
+
+      - name: Desplegar en la instancia Backend
+        run: |
+          ssh backend '
+            cd /var/www/backend &&
+            git fetch origin &&
+            git reset --hard origin/rama-sprint5 &&
+            sudo env COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --ignore-platform-reqs &&
+            php artisan migrate --force &&
+            sudo systemctl restart php8.5-fpm
+          '
