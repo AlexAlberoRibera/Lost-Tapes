@@ -19,4 +19,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/products/{product}', [ProductController::class, 'update']);
     Route::patch('/products/{product}', [ProductController::class, 'update']);
     Route::delete('/products/{product}', [ProductController::class, 'destroy']);
+    Route::post('/products/{product}/like',     [ProductController::class, 'like']);
+    Route::post('/products/{product}/comments', [ProductController::class, 'storeComment']);
 });

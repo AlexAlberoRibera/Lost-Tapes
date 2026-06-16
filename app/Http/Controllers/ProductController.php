@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProductResource;
 use App\Http\Requests\StoreProductRequest;
@@ -61,7 +62,7 @@ class ProductController extends Controller
     )]
     public function index(Request $request)
     {
-        $query = Product::query();
+        $query = Product::withCount('likes');
 
         if ($request->filled('category')) {
             $query->where('category', $request->category);
@@ -135,7 +136,39 @@ class ProductController extends Controller
     )]
     public function show(Product $product)
     {
-        return new ProductResource($product);
+        $product->loadCount('likes')->load(['comments.user']);
+        $userLiked = auth('sanctum')->check()
+            ? $product->likes()->where('user_id', auth('sanctum')->id())->exists()
+            : false;
+
+        $resource = (new ProductResource($product))->toArray(request());
+        $resource['user_liked'] = $userLiked;
+
+        return response()->json(['data' => $resource]);
+    }
+
+    public function like(Product $product)
+    {
+        $user = auth('sanctum')->user();
+        if ($product->likes()->where('user_id', $user->id)->exists()) {
+            $product->likes()->detach($user->id);
+            $liked = false;
+        } else {
+            $product->likes()->attach($user->id);
+            $liked = true;
+        }
+        return response()->json(['liked' => $liked, 'likes_count' => $product->likes()->count()]);
+    }
+
+    public function storeComment(Request $request, Product $product)
+    {
+        $request->validate(['body' => 'required|string|max:1000']);
+        $comment = $product->comments()->create([
+            'user_id' => auth('sanctum')->id(),
+            'body'    => $request->body,
+        ]);
+        $comment->load('user');
+        return response()->json($comment, 201);
     }
 
     #[OA\Put(

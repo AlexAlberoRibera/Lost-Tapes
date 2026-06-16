@@ -33,6 +33,16 @@ class ProductResource extends JsonResource
             'price'       => number_format($this->price, 2),
             'stock'       => $this->stock,
             'image'       => $this->image,
+            'duration'    => $this->duration,
+            'likes_count' => $this->likes_count ?? 0,
+            'comments'    => $this->whenLoaded('comments', fn() =>
+                $this->comments->map(fn($c) => [
+                    'id'         => $c->id,
+                    'body'       => $c->body,
+                    'created_at' => $c->created_at,
+                    'user'       => ['id' => $c->user?->id, 'name' => $c->user?->name],
+                ])
+            ),
         ];
     }
 }
