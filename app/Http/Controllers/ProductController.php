@@ -147,6 +147,36 @@ class ProductController extends Controller
         return response()->json(['data' => $resource]);
     }
 
+    #[OA\Post(
+        path: '/api/products/{product}/like',
+        summary: 'Toggle like en una película',
+        description: 'Da o quita like a una película. Un usuario no puede dar dos likes al mismo producto — actúa como toggle. Requiere autenticación.',
+        tags: ['Products'],
+        security: [['bearerAuth' => []]],
+        parameters: [
+            new OA\Parameter(
+                name: 'product',
+                in: 'path',
+                required: true,
+                description: 'ID de la película',
+                schema: new OA\Schema(type: 'integer')
+            ),
+        ],
+        responses: [
+            new OA\Response(
+                response: 200,
+                description: 'Estado del like actualizado',
+                content: new OA\JsonContent(
+                    properties: [
+                        new OA\Property(property: 'liked', type: 'boolean', example: true),
+                        new OA\Property(property: 'likes_count', type: 'integer', example: 4),
+                    ]
+                )
+            ),
+            new OA\Response(response: 401, description: 'No autenticado'),
+            new OA\Response(response: 404, description: 'Película no encontrada'),
+        ]
+    )]
     public function like(Product $product)
     {
         $user = auth('sanctum')->user();
@@ -160,6 +190,49 @@ class ProductController extends Controller
         return response()->json(['liked' => $liked, 'likes_count' => $product->likes()->count()]);
     }
 
+    #[OA\Post(
+        path: '/api/products/{product}/comments',
+        summary: 'Añadir un comentario a una película',
+        description: 'Crea un comentario asociado a la película. Requiere autenticación.',
+        tags: ['Products'],
+        security: [['bearerAuth' => []]],
+        parameters: [
+            new OA\Parameter(
+                name: 'product',
+                in: 'path',
+                required: true,
+                description: 'ID de la película',
+                schema: new OA\Schema(type: 'integer')
+            ),
+        ],
+        requestBody: new OA\RequestBody(
+            required: true,
+            content: new OA\JsonContent(
+                required: ['body'],
+                properties: [
+                    new OA\Property(property: 'body', type: 'string', example: 'Una obra maestra del cine de culto.'),
+                ]
+            )
+        ),
+        responses: [
+            new OA\Response(
+                response: 201,
+                description: 'Comentario creado',
+                content: new OA\JsonContent(
+                    properties: [
+                        new OA\Property(property: 'id', type: 'integer', example: 1),
+                        new OA\Property(property: 'body', type: 'string', example: 'Una obra maestra del cine de culto.'),
+                        new OA\Property(property: 'user', type: 'object',
+                            properties: [new OA\Property(property: 'name', type: 'string', example: 'Maxi')]
+                        ),
+                        new OA\Property(property: 'created_at', type: 'string', format: 'date-time'),
+                    ]
+                )
+            ),
+            new OA\Response(response: 401, description: 'No autenticado'),
+            new OA\Response(response: 422, description: 'El campo body es obligatorio'),
+        ]
+    )]
     public function storeComment(Request $request, Product $product)
     {
         $request->validate(['body' => 'required|string|max:1000']);
