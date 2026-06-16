@@ -24,7 +24,7 @@ class Product extends Model
 
     public function likes()
     {
-        return $this->belongsToMany(User::class, 'product_likes')->withTimestamps();
+        return $this->belongsToMany(User::class, 'product_likes');
     }
 
     public function comments()
