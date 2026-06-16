@@ -11,22 +11,34 @@ class SocialAuthController extends Controller
 {
     public function redirectToGoogle()
     {
-        return Socialite::driver('google')->stateless()->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
     public function handleGoogleCallback()
     {
-        $googleUser = Socialite::driver('google')->stateless()->user();
+        try {
+            $googleUser = Socialite::driver('google')->user();
+        } catch (\Laravel\Socialite\Two\InvalidStateException $e) {
+            $frontendUrl = env('FRONTEND_URL', 'http://localhost:5173');
+            return redirect("{$frontendUrl}/login?error=oauth_state_invalid");
+        }
 
-        $user = User::updateOrCreate(
-            ['email' => $googleUser->getEmail()],
-            [
-                'name'              => $googleUser->getName(),
-                'google_id'         => $googleUser->getId(),
-                'password'          => bcrypt(str()->random(24)),
-                'role'              => 'editor',
-            ]
-        );
+        $user = User::where('email', $googleUser->getEmail())->first();
+
+        if ($user) {
+            $user->update([
+                'name'      => $googleUser->getName(),
+                'google_id' => $googleUser->getId(),
+            ]);
+        } else {
+            $user = User::create([
+                'name'      => $googleUser->getName(),
+                'email'     => $googleUser->getEmail(),
+                'google_id' => $googleUser->getId(),
+                'password'  => bcrypt(str()->random(24)),
+                'role'      => 'editor',
+            ]);
+        }
 
         $token = $user->createToken('google-auth')->plainTextToken;
 
