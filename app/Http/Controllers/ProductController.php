@@ -10,6 +10,12 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use OpenApi\Attributes as OA;
 
+/**
+ * Controlador principal de la API REST de productos.
+ *
+ * Rutas públicas:  GET /api/products, GET /api/products/{id}
+ * Rutas protegidas (Bearer token Sanctum): POST, PUT, DELETE, like, comentario
+ */
 class ProductController extends Controller
 {
     #[OA\Get(
@@ -137,6 +143,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $product->loadCount('likes')->load(['comments.user']);
+        // user_liked: indica si el usuario autenticado ya dio like.
+        // El frontend lo usa para mostrar el botón en estado correcto desde el primer render.
         $userLiked = auth('sanctum')->check()
             ? $product->likes()->where('user_id', auth('sanctum')->id())->exists()
             : false;
@@ -180,6 +188,9 @@ class ProductController extends Controller
     public function like(Product $product)
     {
         $user = auth('sanctum')->user();
+        // Toggle: si ya existe el like lo elimina, si no lo añade.
+        // La constraint UNIQUE(product_id, user_id) de BD garantiza que nunca
+        // haya duplicados aunque la petición se repita.
         if ($product->likes()->where('user_id', $user->id)->exists()) {
             $product->likes()->detach($user->id);
             $liked = false;
