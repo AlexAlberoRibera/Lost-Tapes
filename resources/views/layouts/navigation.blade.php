@@ -11,16 +11,6 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.*')">
-                        {{ __('Productos') }}
-                </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('products.import')" :active="request()->routeIs('products.import')">
-                        {{ __('Importar Productos') }}
-                </x-nav-link>
-                </div>
             </div>
 
             <!-- Settings Dropdown -->
