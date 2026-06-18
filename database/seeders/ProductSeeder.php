@@ -11,7 +11,7 @@ class ProductSeeder extends Seeder
     {
         Product::create([
             'sku' => 'SKU001',
-            'name' => 'Andrei Rublev',
+            'name' => 'Andrei Rublev - DEMO CAMBIO PROFE',
             'description' => 'Obra maestra de Tarkovsky. Incluye comentario del director y libreto de 40 páginas sobre la iconografía medieval.',
             'price' => 19.99,
             'stock' => 50,
