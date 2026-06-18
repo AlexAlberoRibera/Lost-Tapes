@@ -21,7 +21,7 @@
  *         application/json:
  *           example:
  *             sku: "SKU030"
- *             name: "La pasión de Juana de Arco"
+ *             name: "La pasión de Juana de Arco Segunda parte"
  *             description: "Obra maestra silente..."
  *             price: 22.99
  *             stock: 26
